@@ -1,0 +1,7 @@
+dist
+typing
+bower_components
+node_modules
+.idea
+src/**/*.js
+src/**/*.map

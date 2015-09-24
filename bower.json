@@ -1,0 +1,21 @@
+{
+  "name": "BulbEnergy-Commons",
+  "version": "0.0.1",
+  "authors": [
+    "Piotr Miazga <piotr.miazga@yahoo.comm>"
+  ],
+  "description": "BulbEnergy Frontend commons library",
+  "main": "dist/commons.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore" : [
+    "bower_components",
+    "typing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@git.nbcdn.io:agency/BulbEnergy-Commons.git"
+  }
+}

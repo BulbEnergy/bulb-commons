@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es5",
+		"emitDecoratorMetadata": true,
+        "removeComments": true
+	},
+    "files": [
+      "./typing/tsd.d.ts",
+      "./src/_all.ts"
+    ]
+}
