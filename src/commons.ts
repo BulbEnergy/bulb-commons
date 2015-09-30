@@ -7,7 +7,7 @@
 module BulbEnergy {
     'use strict';
 
-    angular.module('bulb.commons', [])
+    angular.module('bulb.commons', ['auth0', 'angular-storage', 'angular-jwt'])
         .provider('UUID', UUIDProvider)
         .service('AuthorizationGateway', Auth0Service)
         .service('PaymentGateway', StripeService)

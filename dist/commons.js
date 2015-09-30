@@ -431,7 +431,7 @@ var BulbEnergy;
 var BulbEnergy;
 (function (BulbEnergy) {
     'use strict';
-    angular.module('bulb.commons', [])
+    angular.module('bulb.commons', ['auth0', 'angular-storage', 'angular-jwt'])
         .provider('UUID', BulbEnergy.UUIDProvider)
         .service('AuthorizationGateway', BulbEnergy.Auth0Service)
         .service('PaymentGateway', BulbEnergy.StripeService)
