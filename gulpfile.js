@@ -6,6 +6,9 @@ var del = require('del');
 var tslint = require('gulp-tslint');
 var path = require('path');
 var tslint_config = require('./tslint.json');
+var sass = require('gulp-sass');
+var sassMaps = require('gulp-sourcemaps');
+var refresh = require('gulp-livereload');
 
 var config = {
     typings: './typing/tsd.d.ts',
@@ -29,7 +32,9 @@ gulp.task('lint', function () {
         }));
 });
 
-gulp.task('compile', function () {
+
+
+gulp.task('compile-ts', function () {
     gulp.src([config.typings, config.folders.src + '/_all.ts'])
         .pipe(typescript({
             module: config.module,
@@ -43,11 +48,20 @@ gulp.task('compile', function () {
 
 gulp.task('default', function() {
     del.sync(config.folders.dist + '/*', {dot: false});
-    runSequence('lint', 'compile');
+    runSequence('lint', 'compile-ts', 'compile-sass');
 });
 
 gulp.task('watch', function () {
     config.commons.stopOnTSLint = false;
     refresh.listen();
     gulp.watch(config.folders.src + '/**/*.ts', ['lint', 'compile']);
+});
+
+gulp.task('compile-sass', function () {
+    gulp.src(config.folders.src + '/scss/commons.scss')
+        .pipe(sassMaps.init())
+        .pipe(sass())
+        .pipe(sassMaps.write('./maps'))
+        .pipe(gulp.dest(config.folders.dist))
+        .pipe(refresh())
 });
