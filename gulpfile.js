@@ -23,7 +23,6 @@ var config = {
     }
 };
 
-
 gulp.task('lint', function () {
     gulp.src(config.folders.src + '/**/*.ts')
         .pipe(tslint(tslint_config))
@@ -32,10 +31,8 @@ gulp.task('lint', function () {
         }));
 });
 
-
-
 gulp.task('compile-ts', function () {
-    gulp.src([config.typings, config.folders.src + '/_all.ts'])
+    gulp.src([config.typings, config.folders.src + '/commons.ts'])
         .pipe(typescript({
             module: config.module,
             target: config.compilationTarget,
@@ -46,15 +43,11 @@ gulp.task('compile-ts', function () {
         .pipe(gulp.dest(config.folders.dist));
 });
 
-gulp.task('default', function() {
-    del.sync(config.folders.dist + '/*', {dot: false});
-    runSequence('lint', 'compile-ts', 'compile-sass');
-});
-
 gulp.task('watch', function () {
     config.commons.stopOnTSLint = false;
     refresh.listen();
-    gulp.watch(config.folders.src + '/**/*.ts', ['lint', 'compile']);
+    gulp.watch(config.folders.src + '/**/*.ts', ['lint', 'compile-ts']);
+    gulp.watch(config.folders.src + '/**/*.scss', ['lint', 'compile-sass']);
 });
 
 gulp.task('compile-sass', function () {
@@ -62,6 +55,10 @@ gulp.task('compile-sass', function () {
         .pipe(sassMaps.init())
         .pipe(sass())
         .pipe(sassMaps.write('./maps'))
-        .pipe(gulp.dest(config.folders.dist))
-        .pipe(refresh())
+        .pipe(gulp.dest(config.folders.dist));
+});
+
+gulp.task('default', function() {
+    del.sync(config.folders.dist + '/*', {dot: false});
+    runSequence('lint', 'compile-ts', 'compile-sass');
 });

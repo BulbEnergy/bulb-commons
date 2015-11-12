@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"commons.css","sourcesContent":[],"sourceRoot":"/source/"}
+{"version":3,"sources":["commons.scss"],"names":[],"mappings":"AACA,EAAE,WAAW,CAAC;EACZ,KAAK,EAAE,GAAI,GACZ","file":"commons.css","sourcesContent":["//Just a demo scss file\nh1.raynorTest {\n  color: red;\n}"],"sourceRoot":"/source/"}
