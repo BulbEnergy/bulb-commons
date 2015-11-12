@@ -9,7 +9,7 @@
   "moduleType": [
     "globals"
   ],
-  "license": "MIT",
+  "license": "private",
   "ignore" : [
     "bower_components",
     "typing"

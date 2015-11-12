@@ -16,15 +16,6 @@
     },
     "lodash/lodash.d.ts": {
       "commit": "77ec1408257c677f8fd8d6798ebaf6bd87c11b9d"
-    },
-    "auth0/auth0.d.ts": {
-      "commit": "3b0f362204ea965952dafdb682a5274d527ef9d0"
-    },
-    "stripe/stripe.d.ts": {
-      "commit": "d3938ae13f0a5b4262944e023fb05e0f4befdaad"
-    },
-    "mixpanel/mixpanel.d.ts": {
-      "commit": "38fb591c6eba840e0b53d1110302b8e4fb04651c"
     }
   }
 }

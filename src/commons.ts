@@ -4,16 +4,10 @@
  *
  * @type {angular.Module}
  */
-module BulbEnergy {
+module BulbCommons {
     'use strict';
 
-    angular.module('bulb.commons', ['auth0', 'angular-storage', 'angular-jwt'])
-        .provider('UUID', UUIDProvider)
-        .service('AuthorizationGateway', Auth0Service)
-        .service('PaymentGateway', StripeService)
-        .service('WebChatService', WebChatService)
-        .service('StatsService', StatsService)
-        .directive('statsOn', StatsOn.Factory())
+    angular.module('bulb.commons', [])
         .filter('titleCase', function(){
             return function(input) {
                 return input ? input.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}) : '';
