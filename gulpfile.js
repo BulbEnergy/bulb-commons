@@ -53,7 +53,7 @@ gulp.task('watch', function () {
 gulp.task('compile-sass', function () {
     gulp.src(config.folders.src + '/scss/commons.scss')
         .pipe(sassMaps.init())
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(sassMaps.write('./maps'))
         .pipe(gulp.dest(config.folders.dist));
 });
