@@ -44,7 +44,7 @@ gulp.task('compile-ts', function () {
 });
 
 gulp.task('watch', function () {
-    config.commons.stopOnTSLint = false;
+    config.stopOnTSLint = false;
     refresh.listen();
     gulp.watch(config.folders.src + '/**/*.ts', ['lint', 'compile-ts']);
     gulp.watch(config.folders.src + '/**/*.scss', ['lint', 'compile-sass']);
