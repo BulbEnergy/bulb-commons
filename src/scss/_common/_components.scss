@@ -1,0 +1,1119 @@
+/**
+ * Theme styles for buttons / fields
+ */
+
+/* for inline field elements */
+
+.field--inline {
+    font-size: 0;
+    input, button {
+        display: inline-block;
+        @include soft-blur;
+        border-radius: 0;
+    }
+    .inline {
+        font-size: 1rem;
+    }
+    .msg-error {
+        display: none;
+        font-size: 1rem;
+        margin: 1em;
+        color: red; /** needs conforming **/
+        &.active {
+            display: block;
+        }
+    }
+    .msg-dynamic {
+        display: block;
+    }
+}
+
+/**
+ * specific for payment period in refine quote journey
+ */
+.field--inline-payment {
+    margin-top: 1em;
+    @include mobile {
+        margin-bottom: 2em;
+    }
+    p {
+        display: inline-block;
+        margin: 0 1em;
+    }
+    .field-select {
+        display: inline-block;
+        width: 100%;
+        max-width: 10em;
+    }
+}
+
+.multistep-dropdown-container {
+    &.active {
+        height: calc(13.5em - 2px);
+    }
+    @include transition(all .3s);
+    overflow: hidden;
+    height: calc(3.5em - 2px);
+    width: $dropdown-width;
+    &.debug {
+        width: 800px;
+    }
+    @include soft-blur;
+    @include all-button-radius;
+    border: 1px solid $navy;
+    .steps {
+        width: 800px;
+        .step {
+            width: 350px;
+            @include transition(all .3s);
+            float: left;
+            .field-dropdown {
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+                border-left:none;
+                border-top:none;
+            }
+            &.selected {
+                margin-left: -350px;
+            }
+        }
+    }
+    select {
+        display: none;
+    }
+}
+
+.field-dropdown {
+    margin: 1em 0;
+    @include soft-blur;
+    @include all-button-radius;
+    border: 1px solid $navy;
+    position: relative;
+    height: calc(3.5em - 1px);
+    overflow-y: hidden;
+    @include transition(all .3s);
+    max-width: $dropdown-width;
+    .dd-title {
+        padding: 1em;
+        span {
+            display: inline-block;
+            text-align: left;
+        }
+        .fa {
+            float: right;
+        }
+    }
+    .dd-list {
+        width: 100%;
+        overflow-y: scroll;
+        height: 10em;
+    }
+    .dd-item--radio {
+        input[type="radio"] + label span {
+            width: 100%;
+            border-bottom: 0;
+            border-left: 0;
+            border-right: 0;
+            border-radius: 0;
+        }
+        &:first-child {
+            input[type="radio"] + label span {
+                border-top: 0;
+            }
+        }
+    }
+    &.active {
+        height: 13.5em;
+        .dd-title {
+            border-bottom: 1px solid $navy;
+        }
+    }
+}
+
+.field-container {
+    width: 100%;
+    margin: 1.5em 0;
+    .field-body {
+        position: relative;
+        margin: .5em 0;
+        &.radiostack {
+            @include tablet {
+                input[type="radio"] + label span {
+                    margin-bottom: .5em;
+                }
+            }
+        }
+        &.check {
+            margin: 1em 0;
+        }
+    }
+    .field-footer {
+        display: none;
+        font-size: $fs-small;
+        padding: 1em 0;
+        .current-field-msg {
+            &.next {
+                // border-top: 1px solid $navy;
+                display: block;
+            }
+        }
+    }
+
+}
+
+.field-select {
+    position: relative;
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: $white;
+        width: 100%;
+        padding: .25em;
+        // padding-left: 0;
+        font-size: 1.5em;
+        border: 1px solid $navy;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    label {
+        position: absolute;
+        font-size: $fs-large;
+        width: 1em;
+        height: 1.5em;
+        text-align: center;
+        left: -1.5em;
+        line-height: $fs-large;
+    }
+    label.small {
+        font-style: $fs-small;
+    }
+    &.steptwo {
+        margin-top: 0.5em;
+    }
+    &.underline {
+        border-bottom: 1px solid $navy;
+    }
+    &:after {
+        content: "\f0d7";
+        font-family: FontAwesome;
+        position: absolute;
+        font-size: 1.5em;
+        color: $navy;
+        top: 25%;
+        left: calc(100% - 1.25em);
+        pointer-events: none;
+    }
+}
+
+/*
+ Button Styles & Behaviours
+ */
+
+form {
+    button {
+        @include all-button-radius;
+        padding: $button-padding;
+    }
+    input {
+        outline: none;
+        color: $navy;
+        padding: $button-padding;
+        @include all-button-radius;
+    }
+    input[type="checkbox"] {
+        // display: none;
+    }
+    input[type="radio"] {
+        display: none;
+    }
+    input:focus {
+        // appearance: none;
+        @include soft-blur;
+    }
+    select:focus {
+        appearance: none;
+        outline: none;
+        @include soft-blur;
+    }
+}
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    padding: $button-padding;
+    margin:0;
+    vertical-align:middle;
+    background-color: transparent;
+    border: 1px solid $navy;
+    @include all-button-radius;
+    cursor:pointer;
+    @include transition(all .3s);
+    &:hover {
+        @include soft-blur;
+    }
+    /** new refine form spacing */
+    margin-top: .5em;
+    margin-right: 2%;
+}
+input[type="radio"]:checked + label span {
+    background: $navy;
+    color: white;
+}
+
+@mixin validinput {
+    input.invalid {
+        color: $red;
+        border-bottom: 1px solid $red;
+    }
+    input.invalid + label {
+        position: absolute;
+        top: 1.5em;
+        left: -2.5em;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        // border: 1px solid $red;
+        text-align: center;
+        background-color: white;
+    }
+    input.invalid + label:after {
+        font-family: 'FontAwesome';
+        content: '\f00d';
+        color: $red;
+        line-height: 1.5em;
+    }
+    input.invalid + .msg-error {
+        display: block;
+    }
+    .validation {
+        overflow: hidden;
+        max-height: 0px;
+        opacity: 0;
+        color: red;
+        @include transition(all .3s);
+        display: block;
+        p {
+            font-size: 1em;
+            line-height: 1.5em;
+        }
+        .msg-error {
+            margin: 0;
+        }
+    }
+    input.invalid ~ .validation {
+        max-height: 500px;
+        opacity: 1;
+        .content-break {
+            margin: 0;
+        }
+        .msg-error {
+
+        }
+    }
+}
+
+.checkbox-container {
+    position: relative;
+    label {
+        background-color: white;
+        border: 1px solid $navy;
+        @include all-button-radius;
+        padding: .75em;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    span {
+        font-size: $fs-small;
+        margin-left: 2.5em;
+        height: 100%;
+        vertical-align: middle;
+    }
+    &.required {
+        span {
+            position: absolute;
+            margin-top: -1em;
+        }
+    }
+    input[type="checkbox"] {
+        position: absolute;
+        // appearance: none;
+        width: 1rem;
+    }
+    input[type="checkbox"]:checked + label:after {
+        font-family: 'FontAwesome';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: $navy;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        content: "\f00c";
+        padding: .25em;
+        border: 1px solid $navy;
+    }
+
+    input[type="checkbox"]:focus {
+        box-shadow: none;
+        opacity: 0;
+    }
+    input[type="checkbox"]:focus + label {
+        @include soft-blur;
+    }
+}
+.btn--go {
+    background-color: $green;
+    color: $white;
+    @include transition(all .3s);
+    &:hover {
+        background-color: $green-hover;
+    }
+    &.debounce {
+        background-color: $secure; //  hayden request to this non brand colour   
+    }
+}
+.btn--xlarge {
+    font-size: $fs-large;
+    display: block;
+    background-color: $green;
+    color: $white;
+    @include transition(all .3s);
+    &:hover {
+        background-color: $green-hover;
+    }
+}
+
+.btn--select {
+    color: $navy;
+    @include transition(all .3s);
+    box-shadow: 0 0 0 0;
+    background-color: transparent;
+    border: 1px solid $navy;
+    &:hover {
+        @include soft-blur;
+    }
+    &.selected {
+        color: $white;
+        background-color: $navy;
+    }
+    &.fit {
+        @include all-button-radius;
+        color: white;
+        text-align: center;
+        padding: 1em;
+        width: calc(33% - 3%);
+        display: inline-block;
+        margin-right: 5%;
+    }
+    &.last {
+        margin-right: 0;
+    }
+    &.fs-sml {
+        font-size: .9rem;
+    }
+    .fa {
+        float: left;
+    }
+    @include desktop {
+        margin-bottom: .5em;
+    }
+    @include tablet {
+        margin-bottom: .5em;
+    }
+}
+
+[class^="badge"] {
+    padding: 0.25em .75em;
+    border-radius: $form-field-radius;
+    border: 1px solid $navy;
+    display: inline;
+    @include soft-blur;
+}
+
+/**
+ * Form / card containers
+ */
+
+[class^="card-form"] {
+    border-radius: $form-field-radius;
+    background-color: $white;
+    @include soft-blur;
+    @include mobile {
+        &.mobile {
+            box-shadow: none;
+        }
+    }
+    .card-super-header {
+        border-top-left-radius:$form-field-radius;
+        border-bottom-left-radius:0;
+        border-top-right-radius: $form-field-radius;
+        border-bottom-right-radius: 0;
+        background-color: $navy;
+        padding: $card-content-padding;
+        color: white;
+        .title {
+            font-size: 2em;
+        }
+        .paragraph {
+            font-size: $fs-small;
+        }
+        @include tablet {
+            font-size: 1.5rem;
+        }
+    }
+    .card-contents {
+        padding: $card-content-padding;
+        &.no-top {
+            padding-top: 0;
+        }
+        &.switch {
+            padding: 2em;//$window-padding;
+            .quote-field {
+                width: auto;
+                min-width: 40%;
+            }
+            @include tablet {
+                padding: 2em;
+                .content-col {
+                    &.six {
+                        width:100%;
+                    }
+                    &.eight {
+                        width:100%;   
+                    }
+                    &.four {
+                        width: 100%;
+                    }
+                }
+            }
+            @include mobile {
+                padding: 0em;
+                .field-column {
+                    &.six {
+                        width:100%;
+                    }
+                    &.eight {
+                        width:100%;   
+                    }
+                    &.four {
+                        width: 100%;
+                    }
+                }
+                .usage--money {
+                    .six {
+                        width: 100%;
+                    }
+                }
+            }
+            .padding--left {
+                padding-left: 4em;
+                @include mobile {
+                    padding-left: 0;
+                }
+            }
+            /**
+             * new payment form padding
+             */
+            .payment-details {
+                padding: 2em;
+                &.secure {
+                    background-color: $secure;
+                    @include all-button-radius;
+                    input.user {
+                        background-color: transparent;
+                    }
+                }
+                input.invalid + label {
+                    left: -1.75em;
+                    background-color: transparent;
+                }
+                /**
+                 * for 3rd party plugins invalidation, to prevent automatic fails
+                 */
+                input.thirdparty--invalid {
+                    color: $red;
+                    border-bottom: 1px solid $red;
+                }
+                input.thirdparty--invalid + label {
+                    position: absolute;
+                    top: 1.5em;
+                    width: 1.5em;
+                    height: 1.5em;
+                    text-align: center;
+                    left: -1.75em;
+                    background-color: transparent;
+                }
+                input.thirdparty--invalid + label:after {
+                    font-family: 'FontAwesome';
+                    content: '\f00d';
+                    color: $red;
+                    line-height: 1.5em;
+                }
+                input.thirdparty--invalid + .msg-error {
+                    display: block;
+                }
+            }
+        }
+        &.padding--no-left {
+            padding-left: 0;
+        }
+        @include tablet {
+            .card-col {
+                &.six {
+                    width:100%;
+                }
+                &.eight {
+                        width:100%;   
+                }
+                &.four {
+                    width: 100%;
+                }
+            }
+        }
+        .welcome {
+            a.bg--fb {
+                background-color: $fb-blue;
+            }
+            a.bg--tw {
+                background-color: $tw-blue;
+            }
+            a.bg--green {
+                background-color: $green;
+            }
+        }
+    }
+    .card-header {
+        font-size: $fs-header;
+        @include tablet {
+            font-size: 2.5rem;
+        }
+        margin-bottom: .5em;
+        &.m0 {
+            margin: 0;
+        }
+    }
+    .card-body {
+        margin-top: 1em;
+        /**
+         * fix for mobile CC payment width
+         */
+        @include mobile {
+            .field-body {
+                &.eight {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .card-content-head {
+
+        .btn-column-2 {
+            display:inline-block;
+            margin-right: 2.5%;
+            width: 47.5%;
+            button {
+                width: 100%;
+            }
+            &:last-child {
+                margin-left: 2.5%;
+                margin-right: 0;
+            }
+        }
+        &.quote {
+            font-size: $fs-large;
+        }
+        &.morenfo {
+            font-size: $fs-large;
+            margin: 1em 0;   
+        }
+    }
+    .card-content-body {
+        margin: $jump 0;
+    }
+    .btn--go {
+        width: 100%;
+        text-align: center;
+        &.super {
+            padding: 2em;
+        }
+    }
+    input {
+        width: 100%;
+        border: 1px solid $navy;
+        &.user {
+            font-size: 2em;
+            border: none;
+            border-bottom: 1px solid $navy;
+            border-radius: 0;
+            padding: .25em 0;
+        }
+        &.dob {
+            max-width: 5rem;
+        }
+        &.ac-cardnumber {
+            display: inline-block;
+            text-align: left;
+            font-size: 2rem;
+            margin-right: .25em;
+            width: 100%;            
+        }
+        &.ac-cvc {
+            display: block;
+            text-align: left;
+            font-size: 2rem;
+            max-width: 6rem;
+        }
+        &.ac-expiry {
+            display: inline-block;
+            text-align: left;
+            font-size: 2rem;
+            max-width: 5rem;
+        }
+    }
+    @include validinput;
+
+    .inline-form-messages {
+        .full-width-block {
+            width: 100%;
+            height: 1px;
+        }
+    }
+    .card-details {
+        font-size: 0;
+    }
+    [class^="bulb-icon-form"] {
+        fill: $navy;
+        @include transform(scale(0.7));
+        @include transform-origin(center);
+    }
+    .bulb-icon-form--gas {
+        @include transform(scale(1));
+    }
+    button {
+        &.btn--form-submit {
+            width: auto;
+            font-size: 1.5em;
+            margin:1em 0;
+        }
+    }
+}
+
+.card-form-modal {
+    box-shadow: none;
+}
+/**
+ * scroll top widget on signupform
+ */
+[scrolltop] {
+    @include transition(all .3s);
+}
+
+.card-form--widget {
+    margin-top: 2em;
+    margin-left: 1em;
+    &.signup {
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+.card-form--jumbo {
+    margin: 4em;
+    @include tablet {
+        margin: 0;
+    }
+    .card-super-header, .card-contents {
+        padding: $window-padding;
+        @include tablet {
+            padding: 2rem;
+            .contents-col {
+                &.six {
+                    width:100%;
+                }
+            }
+        }
+        .title {
+            font-size: $fs-header;
+            @include tablet {
+                font-size: 2rem;
+            }
+            @include mobile {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .btn--go {
+        width: 100%;
+        @include tablet {
+            width: auto;
+        }
+    }
+    .btn--large {
+        font-size: $fs-large;
+        width: 100%;
+    }
+    /**
+     * refined quote warning message when current contract is 12 months or less
+     */
+    .card-content-head {
+        &.warning {
+            display: none;
+            color: red;
+            a {
+                color: inherit;
+                text-decoration: underline;
+            }
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+.msg-error {
+    overflow: hidden;
+    max-height: 0px;
+    font-size: 1rem;
+    @include transition(all .3s);
+    color: red;
+    opacity: 0;
+}
+
+input.invalid + .msg-error {
+    margin: $fs-small;
+    margin-left: 0;
+    max-height: 100px;
+    opacity: 1;
+}
+
+.viewload {
+    @include transition(all .5s);
+    max-height: 1000px;
+    opacity: 1;
+    overflow: hidden;
+    .card-form--widget {
+        margin: 2em;
+    }
+}
+@include mobile {
+    .hideonmobile {
+        display: none;
+    }
+}
+/**
+ * Reveal dropdown styl;e
+ */
+.reveal {
+    visibility: hidden;
+    overflow: hidden;
+    max-height: 0px;
+    @include transition(all .5s);
+    opacity: 0;
+    &.all {
+        visibility: visible;
+        margin-left: 0;
+        max-height: 2000px;
+        opacity: 1;
+    }
+}
+
+/* use to hide views based on controller scope */
+.view-loading ~ .viewload {
+    max-height: 0px;
+    opacity: 0;
+}
+
+@mixin tariff {
+    [class^="content-main"] {
+        display: none;
+        .main-block {
+            margin-bottom: 2em;
+        }
+        .block-title {
+            color: $pink;
+            margin-bottom: 1em;
+        }
+        .block-title--navy {
+            color: $navy;
+            margin-bottom: 1em;
+        }
+        .block-table {
+            .info {
+                li {
+                    vertical-align: top;
+                    font-size: 1rem;
+                    line-height: 150%;
+                    .detail li {
+                        display: inline-block;
+                        word-wrap: break-word;
+                    }
+                    .detail li:first-child {
+                        width: 55%;
+                    }
+                    .detail li:last-child {
+                        width: 45%;
+                    }
+                }
+            }
+            .detail {
+                font-size: 0;
+                border-top: 1px solid rgba(0,0,0,.2);
+                margin-bottom: 10px;
+                padding-top: 5px;
+            }
+        }
+    }
+    .content-footer {
+        display: none;
+        font-size: $fs-small;
+        @include active;
+    }
+}
+
+/**
+ * Chat Button
+ */
+
+.chat-box {
+    opacity: 0;
+    @include transition(all .5s);
+    &.show {
+        opacity: 1;
+    }
+}
+.chat-online {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 101;
+    @include soft-blur;
+    button {
+        &.btn--go {
+            background-image: url('../img/bubbles--white.svg');
+            background-size: 2.5em;
+            background-position: 1.5em 50%;
+            background-repeat: no-repeat;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 1em 4em;
+            padding-left: 5em;
+        }
+    }
+}
+
+/**
+ * Modal
+ */
+
+.modal-window {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @include transition(all .3s);
+    @include transform(scale(0.75));
+    opacity: 0;
+    perspective: 1000px;
+    visibility: hidden;
+    .modal-bg {
+        background-color: rgba(20,45,98,.85);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        cursor: pointer;
+    }
+    .ui-close {
+        position: absolute;
+        padding: 3em;
+        font-size: 1.5em;
+        top: 0;
+        right: 0;
+        color: white;
+        cursor: pointer;
+    }
+    &.active {
+        @include transform(scale(1));
+        visibility: visible;
+        opacity: 1;
+        z-index: 100;
+        .modal-card {
+            opacity: 1;
+            @include transform(translateY(-50%) scale(1))
+        }
+    }
+    .modal-card {
+        position: relative;
+        top: 50%;
+        @include transition(all .3s);
+        transform-origin: center;
+        opacity: 0;
+        @include transform(translateY(-50%) scale(1.5));
+        cursor: default;
+        @include all-button-radius;
+        @include soft-blur;
+        width: 50%;
+        max-width: 640px;
+        min-width: 320px;
+        margin: 0 auto;
+        background-color: white;
+        padding: $card-content-padding;
+        max-height: 70vh;
+        @include tariff;
+        .main-block {
+            max-height: 60vh;
+            overflow-y: auto;
+            &.card-form {
+                box-shadow: none;
+                margin-bottom: 0;
+            }
+            &.mb0 {
+                margin-bottom: 0;
+            }
+        }
+        .content-main--error {
+            @include active;
+        }
+        .content-main--tariff {
+            @include active;
+        }
+        .content-main--terms {
+            @include active;
+        }
+        .content-main--meters {
+            @include active;
+        }
+        .content-main--login {
+            @include active;
+        }
+        .content-main--general {
+            @include active;
+        }
+    }
+    &.page-mode {
+        overflow-y: auto;
+        .modal-card {
+            top: 0;
+            @include transform(translateY(0%));
+            .content-main--terms {
+                .block-title {
+                    color: $pink;
+                }
+                .block-table {
+                    p {
+                        font-weight: bold;
+                        span {
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .content-title {
+        position: absolute;
+        font-size: 3em;
+        top: -2em;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+        @include mobile {
+            font-size: 2em;
+        }
+    }
+    .content-inline {
+        display: inline-block;
+        margin-right: 5%;
+        &.end {
+            width: 45%;
+            margin-right: 0;
+        }        
+    }
+    .content-footer--offset {
+        color: white;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        bottom: -2em;
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+    }
+    .card-form {
+        button {
+            margin-bottom: 0;
+            &.btn--go {
+                font-size: 1.5em;
+            }
+        }
+        .inline-form-messages {
+            margin-top: 1em;
+            input {
+                &.meter {
+                    // font-size: 1.5em;
+                    border: 1px solid $navy;
+                    @include all-button-radius;
+                    float: left;
+                    width: 18.4%;
+                    padding-left: .5em;
+                    text-align: center;
+                    margin-right: 2%;
+                    &.end {
+                        margin-right: 0;
+                    }
+                }                
+            }
+        }
+    }   
+}
+
+/**
+ * spin loader container
+ */
+.loading-container {
+    p.message {
+        color: $green;
+        text-align: center;
+    }
+}
+
+@include tablet {
+    .field-column-fixed {
+        &.six {
+            width: 100%;
+        }
+    }
+}
+@include tablet {
+    .section-content-wrap.welcome {
+        .content-col-left.seven {
+            width: 100%;
+            .content-title {
+                font-size: 2rem;
+            }
+        }
+        .content-col-right.five {
+            width: 100%;
+        }
+        .card-form--widget {
+            margin-left: 0;
+        }
+    }
+}

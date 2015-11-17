@@ -1,0 +1,434 @@
+/***
+* Static page boilerplate
+***/
+
+$responsive-width: calc(100% + 8em);
+$page-margin: 4em;
+$std-padding: 2em;
+
+.main-container {
+    width: 100%;
+    section {
+        [class^="section-content-wrap"] {
+            @include transition(all .5s);
+            position: relative;
+            padding: $window-padding;
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 1;
+            &.ghost {
+                opacity: 0;
+                padding-bottom: 0;
+            }
+            &.bleed {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 100%;
+                .centered-wrap {
+                    margin-left: calc(-50% - 8em);
+                    width: calc(100% + 8em);
+                    max-width: 1200px;
+                    padding: 0 4em;
+                }
+            }
+        }
+        .tariff-card {
+                @include soft-blur;
+                @include all-button-radius;
+                padding: 2em;
+                background-color: white;
+                color: $navy;
+            }
+        @include tariff;
+        // Home page
+        &.bg--home-about {
+            position: relative;
+            @include bg-cover--bottom;
+            background-image: url($commons-path + 'img/Landing_about_horizontal.jpg');
+            background-position: 0% 0%;
+            @include before {
+                @include cover-gradient(to right, white, 30%, transparent, 60%);
+            }
+        }
+        &.bg--home-service {
+            @include bg-contain;
+            background-image: url($commons-path + 'img/Service.jpg');
+            position: relative;
+            background-position: 0% 50%;
+            @include before {
+                @include cover-gradient(to left, white, 65%, transparent, 85%);
+            }
+        }
+        &.bg--home-tariff {
+            @include bg-cover;
+            background-image: url($commons-path + 'img/tariff-bg.jpg');
+            position: relative;
+        }
+        // About us page
+        &.bg--about {
+            position: relative;
+            @include bg-cover--bottom;
+            background-image: url($commons-path + 'img/Landing_about_horizontal.jpg');
+            background-position: 0% -10%;
+            @include before {
+                @include cover-gradient(to right, white, 30%, transparent, 60%);
+            }
+        }
+        // Energy
+        &.bg--HydroDiagram {
+            @include bg-cover;
+            background-image: url($commons-path + 'img/HydroDiagram.svg');
+            position: relative;
+            background-size: 35%;
+            background-position: 90% 50%;
+        }
+        &.bg--grid {
+            background-color: $navy;
+            @include bg-cover;
+            background-image: url($commons-path + 'img/Electrons.svg');
+            position: relative;
+        }
+        // Service
+        &.bg--service {
+            @include bg-contain;
+            background-image: url($commons-path + 'img/Our-service_cosy-home.jpg');
+            position: relative;
+            background-position: -15% 0%;
+            @include before {
+                @include cover-gradient(to left, white, 60%, transparent, 80%);
+            }
+            @include tablet {
+                background-size: cover;
+                background-position: 0;
+            }
+        }
+        &.bg--talk {
+            @include bg-cover;
+            background-size: 45%;
+            background-position: 100% 50%;
+            background-image: url($commons-path + 'img/CustomerService.svg');
+            position: relative;
+
+        }
+        // Tariff
+        &.bg--tariff {
+            @include bg-cover;
+            background-image: url($commons-path + 'img/tariff-bg.jpg');
+            position: relative;
+            @include before {
+                @include cover-gradient(to right, white, 50%, transparent, 70%);
+            }
+        }
+    }
+    button {
+        @include button-style;
+    }
+    p {
+        line-height: 1.5em;
+    }
+}
+a.body-btn-link {
+    @include button-style;
+}
+a.body-link {
+    color: $green;
+    text-decoration: underline;
+}
+
+/***
+* Section Contents (Main header intro for each page)
+***/
+
+[class^="content-col-"]{
+    // margin-top: $hero-margin;
+}
+.content-col-gutter {
+    height: 1px;
+}
+
+.content-landing-title {
+    margin-bottom: $hero-margin;
+    font-size: $fs-header;
+}
+.content-title {
+    font-size: $fs-header;
+}
+[class^="content-message"] {
+    margin: 2em 0;
+}
+.content-message--small {
+    font-size: $fs-small;
+}
+
+
+[class^="represent--"] {
+    width: 100%;
+    height: 6em;
+    @include bg-contain;
+}
+
+.switch-steps-container {
+    // padding-top: 4.5em;
+    .switch-step {
+        padding: 0% 5%;
+        .pv05 {
+            padding: 0.5em 0;
+        }
+        .step-info {
+            margin-top: 1em;
+        }
+    }
+}
+.social-buttons-container {
+    padding-top: 4.5em;
+    .social-btn--large {
+        padding: 0% 2.5%;
+        font-size: $fs-large;
+        a {
+            display: block;
+            padding: .5em 0;
+            background-color: $navy;
+            @include all-button-radius;
+        }
+    }
+}
+/*
+ inline input form
+ */
+[class^="content-form--"] {
+    position: relative;
+    padding-top: 2em;
+    label {
+        font-size: .5em;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+    }
+    .quote-field, .search-field {
+        padding: 1em;
+    }
+    input {
+        border-top-left-radius: $form-field-radius;
+        border-bottom-left-radius: $form-field-radius;
+    }
+    button {
+        border-top-left-radius:0;
+        border-bottom-left-radius:0;
+        border-top-right-radius: $form-field-radius;
+        border-bottom-right-radius: $form-field-radius;
+    }
+}
+
+
+/**
+ * Help page related
+ */
+
+.help-hours[role="open"] {
+    display: block;
+}
+.help-hours[role="closed"] {
+    display: block;
+}
+.content-form--search {
+    .search-field {
+        font-size: 1.5rem;
+    }
+    input.search-field {
+        width: 80%;
+        padding-left: 3.5em;
+    }
+    .field--inline:after {
+        content: "\f002";
+        font-family: FontAwesome;
+        font-size: 1.5rem;
+        position: absolute;
+        color: $navy;
+        top: 2.5em;
+        left: 1.25em;
+    }
+    button {
+        width: 20%;
+    }
+}
+a.btn--med {
+    font-size: 1.25em;
+}
+
+.help-requests-group {
+    position: absolute;
+    margin-top: 6rem;
+    margin-left: 4rem;
+    font-size: 0;
+    left: 0;
+    width: calc(100% - 8rem);
+    padding-left: 4rem;
+    padding-right: 4rem;
+    a.btn--med {
+        text-align: center;
+        font-size: 1.2rem;
+        width: calc(33% - 4%);
+        margin: 0 2%;
+    }
+}
+
+.help-block-col {
+    vertical-align: top;
+    font-size: $fs-small;
+    color: $navy;
+    display: inline-block;
+    width: 25%;
+    [class^="column-contents--"] {
+        width: 100%;
+        min-height: 1px;
+    }
+    .column-contents--pink-bulb {
+        .line {
+            stroke: $pink;
+        }
+    }
+    .title-row {
+        height: 2em;
+        font-weight: bold;
+    }
+    .help-lists-block {
+        font-size: 0;
+        [class^="help-block-column"]{
+            display: inline-block;
+            width: 50%;
+            &:first-child {
+                width:inherit;
+                margin-right: 2em;
+            }
+        }
+        .help-col-list {
+            font-size: $fs-small;
+            .help-block-item {
+                line-height: 1.5em;
+            }
+        }
+    }
+}
+
+/***
+* Jumbo:
+* Curved header image clipper
+***/
+
+$jumbo-offset: 3 * $window-padding;
+
+.page-jumbo {
+    height: calc(100% + #{$jumbo-offset} + #{$window-padding}); // plus accounting for overflow
+    position: absolute;
+    top: -$jumbo-offset;
+    z-index: 1;
+    width: 200vw;
+    left: calc(50% - 100vw);
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+    overflow: hidden;
+    .jumbo-image-container {
+        background-color: #ca478b;//$pink; /* fudging colour for now due to compression */
+        height: 100%;
+        @include bg-cover--top;
+        background-size: 50%;
+        @include tablet {
+          background-size: 80%;
+        }
+        @include desktop {
+          background-size: 80%;
+        }
+        &.type1 {
+            background-image: url($commons-path + 'img/header.jpg');
+        }
+        &.type2 {
+            background-image: url($commons-path + 'img/header-blue.jpg');
+            background-color: #0d2e63;
+        }
+        &.type3 {
+            background-image: url($commons-path + 'img/header-blue-about.jpg');
+            background-color: #0d2e63;
+        }
+    }
+}
+/* padding to account for section overlap with marketing curve header
+*  Add class to <section> following the page-jumbo
+*/
+.main-container {
+
+    .postjumbo {
+        padding-top: #{$jumbo-offset - $window-padding};
+        [class^="section-content-wrap"] {
+            padding-top: 0;
+        }
+    }
+}
+
+/**
+ * SVGs
+ */
+.bulb-icon {
+    fill: $navy;
+}
+/**
+ * terms styling (from Marketing)
+ */
+.block-terms {
+    h3 {
+        @include mobile {
+            font-size: 2rem;
+        }
+    }
+    ul {
+        list-style: disc inside none;
+
+        li {
+            // display: list-item;
+            list-style: disc inside none;
+            display: inline-block;
+            width: 100%;
+            span {
+                display: inline-block;
+                margin: 1em 0;
+                vertical-align: top;
+            }
+            &.first {
+                padding-left: $std-padding;
+                @include mobile {
+                    padding-left: 0;
+                }
+                span {
+                    width: calc(100% - 3em);
+                    &.counter {
+                        width: 3em;
+                    }
+                }
+            }
+            &.second {
+                padding-left: $page-margin;
+                position: relative;
+                @include mobile {
+                    padding-left: $std-padding;
+                }
+                span {
+                    width: calc(100% - #{$page-margin});
+                    &.counter {
+                        width: $page-margin;
+                    }
+                }
+                &:before {
+                    position: absolute;
+                    content: "";
+                    border-left:1px solid #c2ccd9;
+                    left: 2.5em;
+                    height: 100%;
+                    @include mobile {
+                        left: .5em;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,266 @@
+[class^="blb-header"] {
+    color: white;
+    width: 100%;
+    display: block;
+    padding: $window-padding;
+    position: fixed;
+    z-index: 10;
+    @include transition(all .3s);
+
+    &.sticky {
+        background-color: $navy;
+        padding: 2em $window-padding;
+
+        @include mobile {
+            padding-top: 0.75em;
+            padding-bottom: 4em;
+        }
+    }
+}
+.blb-header--switching {
+    color: $navy;
+    a {
+        color: $pink;
+    }
+    .header-bg-container {
+        @include bg-cover;
+        background-image: url('/images/front/header-bg.png');
+        background-position: 0% 0%;
+        width: 100%;
+        position: absolute;
+        height: 50vh;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+/***
+* Navigation Menu
+***/
+
+.navigation {
+    [class^="nav--"] {
+        display: inline-block;
+    }
+    &.mobile {
+        display: none;
+    }
+    @include mobile {
+        display: none;
+        &.mobile {
+            position: absolute;
+            display: block;
+            width: calc(100% - 8em);
+            .nav--menu {
+                width: 50%;
+                background-color: $navy;
+                position: fixed;
+                right: 0;
+                top: 0;
+                padding: 2em;
+                padding-right: 0;
+                border-bottom-left-radius: 2em;
+                @include soft-blur;
+
+                &.burger {
+                    padding: 0;
+                    top: auto;
+                    right: 4em;
+                    box-shadow: none;
+                    border-bottom-left-radius: 0;
+                    background-color: transparent;
+
+                    .menu--hidden {
+                        display: block;
+                        font-size: 2rem;
+
+                        .icon-menu {
+                            margin-top: 0.35em;
+                        }
+                    }
+
+                    .menu--open {
+                        display: none;
+                    }
+                }
+
+                .menu--hidden {
+                    display: none;
+                }
+                .menu--open {
+                    display: block;
+                    .menu-item {
+                        display: block;
+                        padding: 0.75rem 0;
+                        &:last-child {
+                            padding: 0.5rem 2rem;
+                        }
+                    }
+                    .menu--close {
+                        position: absolute;
+                        bottom: 1.5rem;
+                        font-size: 2rem;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .nav--logo {
+        width: 20%;
+        min-height: 1.5em;
+        min-width: 100px;
+    }
+    .nav--menu {
+        width: 79%;
+        text-align: right;
+        float: right;
+        .menu-lists {
+            font-size: 0;
+            .menu-item {
+                .menu-link.inline {
+                    @media (min-width: #{$tablet-width + 1px}) and (max-width: #{$desktop-width}) {
+                        font-size: .85rem;
+                    }
+                }
+            }
+        }
+    }
+    .menu-link {
+        padding: .5em 2em;
+        position: relative;
+        @include transition(all 0.3s);
+
+        &:after {
+            position: absolute;
+            bottom: 2px;
+            left: 2em;
+            right: 2em;
+            content: "";
+            border-bottom: 2px solid white;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(all 0.3s);
+        }
+
+        &:hover,
+        &.active {
+            &:after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    .menu-item {
+        display: inline-block;
+        &:first-child {
+            a {
+                padding-left: 0;
+            }
+            .menu-link {
+                &:after {
+                    left: 0;
+                }
+            }
+        }
+        &:last-child {
+            a {
+                padding-right: 0;
+            }
+            .menu-link {
+                &:after {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+.bulb-logo {
+  position: absolute;
+  min-width: 100px;
+  max-width: 125px;
+  min-height: 38px;
+
+  .line.motion {
+    @include animation-delay(0.5s);
+  }
+}
+
+/***
+* Dropdown menu in Nav
+***/
+
+.menu-dropdown {
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+
+    .dd-handle {
+        position: relative;
+        margin-right: 16px;
+
+        &.active {
+            color: $white;
+        }
+    }
+
+    .dd-list {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        overflow: hidden;
+        text-align: center;
+        background-color: #fff;
+        top: 0;
+        left: 0;
+        width: 100%;
+        @include transition(all 0.15s 0.05s ease-in);
+        @include transform(scaleX(0.85) scaleY(0.7));
+        @include transform-origin(top);
+        @include soft-blur;
+        @include all-button-radius;
+    }
+
+    .dd-item {
+        @include transition(all 0.3s);
+        @include transform(translateY(-30px));
+    }
+
+    [class^="dd-link--"] {
+        color: $navy;
+        display: block;
+        line-height: 2.5em;
+
+        &.green {
+            color: $green;
+        }
+        &:hover {
+            color: $green;
+        }
+    }
+
+    .icon-angle-down {
+        position: absolute;
+        top: 2px;
+        right: -20px;
+    }
+
+    &.active {
+        .dd-list {
+            visibility: visible;
+            opacity: 1;
+            @include transform(scaleX(1) scaleY(1));
+            @include transition(all 0.2s);
+        }
+
+        .dd-item {
+            @include transition(all 0.3s 0.05s);
+            @include transform(translateY(0));
+        }
+    }
+}

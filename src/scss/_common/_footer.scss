@@ -1,0 +1,141 @@
+/***
+* Footer
+***/
+
+footer {
+    background-color: $silver;
+    width: 100%;
+}
+
+.blb-footer-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: $window-padding;
+    padding-bottom: 12em;
+    @include tablet {
+        position: relative;
+    }
+
+    @include mobile {
+        padding-left: $window-padding/2;
+        padding-right: $window-padding/2;
+    }
+}
+
+$footer-line-height: 1.7em;
+
+footer {
+    @include bg-contain--bottom;
+    background-image: url('/images/front/footer.png');
+}
+
+.footer-block-col {
+    font-size: $fs-small;
+    color: $navy;
+
+    [class^="column-contents--"] {
+        width: 100%;
+        min-height: 1px;
+    }
+
+    &.sitemap {
+        @include span-columns(6);
+    }
+
+    .column-contents--pink-bulb {
+        .line {
+            stroke: $pink;
+        }
+    }
+    .title-row {
+        color: $pink;
+        height: 2em;
+    }
+    .contact-block {
+        line-height: $footer-line-height;
+    }
+    .sitemap-lists-block {
+        @include row();
+        font-size: 0;
+        [class^="sitemap-block-column"]{
+            vertical-align: top;
+        }
+        .sitemap-col-list {
+            font-size: $fs-small;
+            .sitemap-block-item {
+                line-height: $footer-line-height;
+                @include span-columns(4);
+                @include omega(3n);
+            }
+        }
+    }
+    a.body-link--grey {
+        color: $greydarker;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .social-icons {
+        .social-icon {
+            font-size: 2em;
+            float: left;
+            width: 33.33%;
+            text-align: center;
+        }
+        a {
+            color: $navy;
+        }
+    }
+    @include tablet {
+        &.two {
+            &.logo {
+                position: absolute;
+                bottom: 10.5em;
+            }
+        }
+        &.four {
+            width: 65%;
+        }
+        &.three {
+            position: absolute;
+            bottom: 6.5em;
+            right: 4em;
+        }
+
+        &.sitemap {
+            @include span-columns(8);
+        }
+    }
+    @include mobile {
+        &.three {
+            width: 40%;
+            .column-contents--social {
+                .title-row {
+                    height: 0;
+                }
+            }
+        }
+        &.two {
+            width: 100%;
+            &.logo {
+                .bulb-logo {
+                    min-width: 8em;
+                }
+            }
+        }
+        &.four {
+            width: 100%;
+        }
+
+        &.sitemap {
+            margin-top: 1em;
+            @include span-columns(12);
+        }
+
+        .social-icons {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+$tablet-width: 768px;
+$super-wide: 1440px;
+$desktop-width: 1024px;
+$mobile-width: 640px;
+
+@mixin widescreen {
+  @media (min-width: #{$super-wide + 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$tablet-width + 1px}) and (max-width: #{$super-wide}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+/**
+ * Base styles
+ */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $base-font;
+    font-size: 16px;//62.5%;
+    overflow-x: hidden;
+    @include tablet {
+      font-size: 12px;
+    }
+}
+
+body {
+  background-color: $col_background;
+  color: $navy;
+  overflow-x: hidden;
+}
+
+/*
+ * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+ *
+ * [1] IE9
+ * [2] IE10+
+ */
+/* 1 */
+.ie9 img[src*=".svg"] {
+  width: 100px;
+}
+/* 2 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src*=".svg"] {
+    width: 100px;
+  }
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+@include selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+.no-bullet,
+%no-bullet {
+    list-style: none;
+}
+
+ul {
+    &.no-bullet {
+        @extend %no-bullet;
+    }
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Misc ---------------------- */
+.hide,
+%hide {
+    display: none;
+}
+
+// When we want the last column to fill in the remainder of the row
+.fill-remainder,
+%fill-remainder {
+    float: none;
+    overflow: hidden;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    display: inline-block;
+    fill: currentColor;
+}

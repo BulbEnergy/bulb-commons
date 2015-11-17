@@ -1,0 +1,46 @@
+/**
+ * Global helper classes
+ * Basic styling in minimal classes
+ */
+
+.clear-fix,
+%clear-fix {
+  clear: both;
+  line-height:1px;
+}
+
+/*
+ * apply to inline elements when using 
+ * font-size 0 technique on parent with child as display inline-block
+ * to reset the font size
+ */
+.inline {
+    font-size: 1rem;
+}
+.txt-center {
+    text-align: center;
+}
+.txt-right {
+    text-align: right;
+}
+
+/* Neat Grid Last-child class */
+.end {
+    margin-right: 0;
+}
+.top {
+    margin-top: 0;
+}
+.parent {
+    position: relative;
+}
+.clean {
+    margin: 0;
+    padding: 0;
+}
+.strong {
+    font-weight: bold;
+}
+.content-break {
+    margin-top: 2em;
+}

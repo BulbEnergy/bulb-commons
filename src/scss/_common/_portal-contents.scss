@@ -1,0 +1,123 @@
+/**
+ * Portal site specifics
+ */
+
+.blb-header--portal {
+    color: white;
+    a {
+        color: $pink;
+    }   
+    background-color: $navy;
+    .header-bg-container {
+        @include bg-contain;
+        background-image: url('../img/header-bg-portal.jpg');
+        background-position: 0% 0%;
+        width: 100%;
+        position: absolute;
+        height: 10em; 
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.main-container[role="portal"] {
+    $portal-gap: 1rem;
+    min-height: calc(50vh - 10em);
+    @include transition(all .3s);
+    background-color: red;
+    .content-title {
+        margin-bottom: 1em;
+    }
+    .content-break {
+        margin-bottom: 4em;
+    }
+    .card-form {
+        color: $navy;
+    }
+    .content-breadcrumb {
+        color: $green;
+    }
+    .section-content-wrap {
+        color: white;
+        .portal-buttons {
+            font-size: 0;
+            .portal-item {
+                position: relative;
+                vertical-align: top;
+                font-size: 3rem;
+                display: inline-block;
+                color: white;
+                border-radius: .5rem;
+                background-color: $green;
+                text-align: center;                
+                width: calc(33% - .55rem);
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+                .item-wrap {                    
+                    padding: .5em .25em;
+                    .item-title {
+                        font-size: .5em;
+                        padding-bottom: 1em;
+                    }
+                    .item-svg {
+                        position: relative;
+                        font-size: 1.25em;
+                        margin: .5em 0;
+                    }
+                }
+                &.disabled {
+                    background-color: $green;
+                    @include transition(all .5s);
+                    .item-status {
+                        @include transition(all .5s);
+                        opacity: 0;
+                        color: $greydarker;
+                        position: absolute;
+                        bottom: 1.5em;
+                        width: 100%;
+                        margin-left: -.7em;
+                        font-size: .35em;                        
+                    }  
+                    &:hover {
+                        background-color: $grey;
+                        .item-status {
+                            opacity: 1;
+                        }
+                    }                  
+                }
+                &:nth-child(3n){
+                    margin-right: 0;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .portal-meter-button {
+        padding: 2em;
+        width: 100%;
+        background-color: $green;
+        text-align: center;
+        @include all-button-radius;
+        .icon-lightbulb, .icon-gas {
+            fill: white;            
+            width: 5em;        
+            margin: 0 auto;  
+            max-height: 8em;  
+        }
+        .icon-gas {
+            width: 8em;
+        }
+        .meter-image {
+            margin: 1em 0;
+        }
+        .meter-text {
+            font-size: 1em;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

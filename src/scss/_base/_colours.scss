@@ -1,0 +1,103 @@
+/**
+ * Base styles ~ Colours
+ */
+
+/***
+* Primary
+***/
+
+$white: #fff;
+$pink: #C3428C;
+$navy: #062F65;
+$green: #01CB81;
+$lightgreen: #d8f1ea;
+// $grey: #D7D2CB;
+$grey: #a3a19d;
+$secure: #f4f4f8;
+
+$greydarker: #393939;
+
+$fb-blue: #425793;
+$tw-blue: #62aceb;
+
+$red: #ff0000;
+
+$silver: #f6f5fa;
+
+$white-hover: rgba(255,255,255,.2);
+$pink-hover: #f8b5d3;
+$navy-hover: #96adc4;
+$green-hover: #64ebcd;
+$grey-hover: rgba(0,0,0,.2);
+
+$white_transparent: rgba(255,255,255,.5);
+
+$col_paragraph: #333333;
+$col_heading: #333333;
+
+$col_background: #fff;
+
+$col_link: #939393;
+$col_link-hover: #000000;
+
+
+/**
+ * Add custom colours and their respective classes, ie:
+ *
+ * $red: #E23C3C;
+ *
+ * .red,
+ * %red {
+ *     color: $red;
+ * }
+ *
+ */
+
+.pink,
+%pink {
+    color: $pink;
+}
+.navy,
+%navy {
+    color: $navy;
+}
+.green,
+%green {
+    color: $green;
+}
+.grey,
+%grey {
+    color: $grey;
+}
+.white,
+%white {
+    color: $white;
+}
+
+.red,
+%red {
+    color: $red;
+}
+
+.bg--navy {
+    background-color: $navy;
+}
+.bg--green {
+    background-color: $green;
+}
+.bg--grey {
+    background-color: $grey;
+}
+.bg--white {
+    background-color: $white;
+}
+.bg--pink {
+    background-color: $pink;
+}
+
+.bg--fb {
+    background-color: $fb-blue;
+}
+.bg--tw {
+    background-color: $tw-blue;
+}

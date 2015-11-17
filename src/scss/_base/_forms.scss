@@ -1,0 +1,56 @@
+/**
+ * Base styles ~ Forms
+ */
+%disabled-state {
+    cursor: not-allowed;
+}
+
+html {
+    input[disabled] {
+        @extend %disabled-state;
+    }
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+    resize: vertical;
+}
+
+/*
+ * Basic Form element resets. 
+ */
+
+form {
+    input, button {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+    input[type="email"], input[type="password"], input[type="file"] {
+        margin: 0;
+        padding: 0;
+    }
+}
+/*
+ * going ng formless hack
+ */
+input, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+input[type="email"], input[type="password"], input[type="file"] {
+    margin: 0;
+    padding: 0;
+}
+button {    
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,80 @@
+/***
+* Bulb stylistic Mixins
+***/
+
+@mixin soft-blur {
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+@mixin all-button-radius {
+    border-radius: $form-field-radius;
+}
+
+@mixin button-style {
+    @include all-button-radius;
+    padding: $button-padding;
+    outline: none;
+    border: 0;
+    display: inline-block;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@mixin bg-contain {
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+@mixin bg-contain--bottom {
+    background-size: contain;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+@mixin bg-cover {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+@mixin bg-cover--top {
+    background-size: cover;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+}
+
+@mixin bg-cover--bottom {
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+@mixin cover-gradient ($direction, $col1, $stop1, $col2, $stop2) {
+
+    background-image: linear-gradient($direction, $col1 $stop1, $col2 $stop2);
+}
+@mixin before {
+    &:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @content;
+    }
+}
+
+@mixin active {
+    &.active {
+        display: block;
+    }
+    @content;
+}
+
+@mixin v-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
