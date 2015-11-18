@@ -341,14 +341,14 @@ $jumbo-offset: 3 * $window-padding;
           background-size: 80%;
         }
         &.type1 {
-            background-image: url($commons-path + 'img/header.jpg');
+            background-image: url($commons-path + '/src/img/header.jpg');
         }
         &.type2 {
-            background-image: url($commons-path + 'img/header-blue.jpg');
+            background-image: url($commons-path + '/src/img/header-blue.jpg');
             background-color: #0d2e63;
         }
         &.type3 {
-            background-image: url($commons-path + 'img/header-blue-about.jpg');
+            background-image: url($commons-path + '/src/img/header-blue-about.jpg');
             background-color: #0d2e63;
         }
     }

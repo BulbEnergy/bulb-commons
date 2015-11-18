@@ -27,7 +27,7 @@ $footer-line-height: 1.7em;
 
 footer {
     @include bg-contain--bottom;
-    background-image: url('/images/front/footer.png');
+    background-image: url($commons-path + '/src/img/footer.png');
 }
 
 .footer-block-col {

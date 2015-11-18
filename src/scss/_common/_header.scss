@@ -24,7 +24,7 @@
     }
     .header-bg-container {
         @include bg-cover;
-        background-image: url('/images/front/header-bg.png');
+        background-image: url($commons-path + '/src/img/header-bg.png');
         background-position: 0% 0%;
         width: 100%;
         position: absolute;
