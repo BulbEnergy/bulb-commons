@@ -187,7 +187,7 @@
   min-height: 38px;
 
   .line.motion {
-    @include animation-delay(0.5s);
+    @include animation-delay(1s);
   }
 }
 

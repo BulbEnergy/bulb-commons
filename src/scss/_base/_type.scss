@@ -72,43 +72,37 @@ h6, .h6, %h6 {
 h1,
 .h1,
 %h1 {
-    font-size: rem(4.4);
-    line-height: rem(4.84);
+    @include font(4.4, 4.84);
 }
 
 h2,
 .h2,
 %h2 {
-    font-size: rem(3.7);
-    line-height: rem(4.07);
+    @include font(3.7, 4.07);
 }
 
 h3,
 .h3,
 %h3 {
-    font-size: rem(2.7);
-    line-height: rem(2.97);
+    @include font(2.7, 2.97);
 }
 
 h4,
 .h4,
 %h4 {
-    font-size: rem(2.3);
-    line-height: rem(2.53);
+    @include font(2.3, 2.53);
 }
 
 h5,
 .h5,
 %h5 {
-    font-size: rem(1.7);
-    line-height: rem(1.87);
+    @include font(1.7, 1.87);
 }
 
 h6,
 .h6,
 %h6 {
-    font-size: rem(1.4);
-    line-height: rem(1.58);
+    @include font(1.4, 1.58);
 }
 
 p {
