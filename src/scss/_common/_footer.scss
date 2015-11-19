@@ -134,8 +134,15 @@ footer {
         }
 
         .social-icons {
-            width: 50%;
-            margin: 0 auto;
+            position: absolute;
+            bottom: 7em;
+            right: 2rem;
+            text-align: right;
+            width: 120px;
+
+            .social-icon {
+                text-align: right;
+            }
         }
     }
 }
