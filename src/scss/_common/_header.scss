@@ -11,7 +11,7 @@
         background-color: $navy;
         padding: 2em $window-padding;
 
-        @include mobile {
+        @include menu-breakpoint {
             padding-top: 0.75em;
             padding-bottom: 4em;
         }

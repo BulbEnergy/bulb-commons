@@ -40,7 +40,7 @@ footer {
     }
 
     &.sitemap {
-        @include span-columns(6);
+        @include span-columns(5);
     }
 
     .column-contents--pink-bulb {
@@ -67,6 +67,7 @@ footer {
                 line-height: $footer-line-height;
                 @include span-columns(4);
                 @include omega(3n);
+                max-width: 140px;
             }
         }
     }
@@ -129,7 +130,7 @@ footer {
         }
 
         &.sitemap {
-            margin-top: 1em;
+            margin-top: 2em;
             @include span-columns(12);
         }
 
