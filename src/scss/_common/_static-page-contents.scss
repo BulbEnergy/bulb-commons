@@ -60,15 +60,6 @@ $std-padding: 2em;
                 @include cover-gradient(to right, white, 30%, transparent, 60%);
             }
         }
-        &.bg--home-service {
-            @include bg-contain;
-            background-image: url($commons-path + 'img/Service.jpg');
-            position: relative;
-            background-position: 0% 50%;
-            @include before {
-                @include cover-gradient(to left, white, 65%, transparent, 85%);
-            }
-        }
         &.bg--home-tariff {
             @include bg-cover;
             background-image: url($commons-path + 'img/tariff-bg.jpg');
