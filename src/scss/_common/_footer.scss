@@ -43,6 +43,10 @@ footer {
         @include span-columns(5);
     }
 
+    &.contact {
+        @include span-columns(3);
+    }
+
     .column-contents--pink-bulb {
         .line {
             stroke: $pink;
@@ -89,19 +93,16 @@ footer {
         }
     }
     @include tablet {
-        &.two {
-            &.logo {
-                position: absolute;
-                bottom: 10.5em;
-            }
+        &.logo {
+            position: absolute;
+            bottom: 10.5em;
         }
         &.four {
             width: 65%;
         }
-        &.three {
-            position: absolute;
-            bottom: 6.5em;
-            right: 4em;
+
+        &.contact {
+            @include span-columns(12);
         }
 
         &.sitemap {
@@ -117,13 +118,13 @@ footer {
                 }
             }
         }
-        &.two {
-            width: 100%;
-            &.logo {
-                .bulb-logo {
-                    min-width: 8em;
-                }
+        &.logo {
+            .bulb-logo {
+                min-width: 8em;
             }
+        }
+        &.contact {
+            @include span-columns(12);
         }
         &.four {
             width: 100%;
