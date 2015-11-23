@@ -8,6 +8,7 @@ $std-padding: 2em;
 
 .main-container {
     width: 100%;
+
     section {
         [class^="section-content-wrap"] {
             @include transition(all .5s);
@@ -21,15 +22,16 @@ $std-padding: 2em;
                 padding-bottom: 0;
             }
             &.bleed {
-                position: absolute;
-                top: 0;
-                left: 50%;
-                width: 100%;
                 .centered-wrap {
-                    margin-left: calc(-50% - 8em);
-                    width: calc(100% + 8em);
                     max-width: 1200px;
-                    padding: 0 4em;
+                    padding: 0;
+                }
+                @include mobile {
+                    .content-col-quote {
+                        &.six {
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }
@@ -320,37 +322,47 @@ a.btn--med {
 $jumbo-offset: 3 * $window-padding;
 
 .page-jumbo {
-    height: calc(100% + #{$jumbo-offset} + #{$window-padding}); // plus accounting for overflow
-    position: absolute;
-    top: -$jumbo-offset;
     z-index: 1;
     width: 200vw;
-    left: calc(50% - 100vw);
+    margin-left: -50vw;
     border-bottom-left-radius: 45%;
     border-bottom-right-radius: 45%;
     overflow: hidden;
-    .jumbo-image-container {
-        background-color: #ca478b;//$pink; /* fudging colour for now due to compression */
-        height: 100%;
-        @include bg-cover--top;
-        background-size: 50%;
-        @include tablet {
-          background-size: 80%;
+    background-color: #ca478b;//$pink; /* fudging colour for now due to compression */
+    background-size: 50%;
+    @include bg-cover--top;
+
+    @include tablet {
+      background-size: 80%;
+    }
+
+    @include desktop {
+      background-size: 80%;
+    }
+
+    &.type1 {
+        background-image: url('/images/front/header.jpg');
+        @include mobile {
+            background-image: none;
         }
-        @include desktop {
-          background-size: 80%;
+    }
+    &.type2 {
+        background-image: url('/images/front/header-blue.jpg');
+        background-color: #0d2e63;
+        @include mobile {
+            background-image: none;
         }
-        &.type1 {
-            background-image: url($commons-path + '/src/img/header.jpg');
+    }
+    &.type3 {
+        background-image: url('/images/front/header-blue-about.jpg');
+        background-color: #0d2e63;
+        @include mobile {
+            background-image: none;
         }
-        &.type2 {
-            background-image: url($commons-path + '/src/img/header-blue.jpg');
-            background-color: #0d2e63;
-        }
-        &.type3 {
-            background-image: url($commons-path + '/src/img/header-blue-about.jpg');
-            background-color: #0d2e63;
-        }
+    }
+    @include mobile {
+        background-size: cover;
+        background-image: none;
     }
 }
 /* padding to account for section overlap with marketing curve header
@@ -359,7 +371,9 @@ $jumbo-offset: 3 * $window-padding;
 .main-container {
 
     .postjumbo {
+        margin-top: -5vw;
         padding-top: #{$jumbo-offset - $window-padding};
+
         [class^="section-content-wrap"] {
             padding-top: 0;
         }
