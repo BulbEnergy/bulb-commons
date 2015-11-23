@@ -105,7 +105,7 @@ footer {
         }
 
         &.sitemap {
-            @include span-columns(8);
+            @include span-columns(7);
         }
     }
     @include mobile {
