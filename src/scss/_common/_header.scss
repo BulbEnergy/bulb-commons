@@ -29,7 +29,7 @@
     &.mobile {
         display: none;
     }
-    @include mobile {
+    @include menu-breakpoint {
         display: none;
         &.mobile {
             position: absolute;
@@ -118,6 +118,11 @@
         position: relative;
         @include transition(all 0.3s);
 
+        @include tablet {
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+        }
+
         &:after {
             position: absolute;
             bottom: 2px;
@@ -128,6 +133,11 @@
             opacity: 0;
             visibility: hidden;
             @include transition(all 0.3s);
+
+            @include tablet {
+                left: 1.5em;
+                right: 1.5em;
+            }
         }
 
         &:hover,

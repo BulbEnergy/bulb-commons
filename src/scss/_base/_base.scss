@@ -2,6 +2,7 @@ $tablet-width: 1024px;
 $super-wide: 1440px;
 $desktop-width: 1024px;
 $mobile-width: 640px;
+$menu-breakpoint-width: 790px;
 
 @mixin widescreen {
   @media (min-width: #{$super-wide + 1px}) {
@@ -24,6 +25,12 @@ $mobile-width: 640px;
   }
 }
 
+@mixin menu-breakpoint {
+  @media (max-width: #{$menu-breakpoint-width}) {
+    @content;
+  }
+}
+
 /**
  * Base styles
  */
@@ -36,8 +43,9 @@ html {
     font-family: $base-font;
     font-size: 16px;//62.5%;
     overflow-x: hidden;
+
     @include tablet {
-      font-size: 12px;
+        font-size: 14px;
     }
 }
 
