@@ -322,6 +322,7 @@ a.btn--med {
 $jumbo-offset: 3 * $window-padding;
 
 .page-jumbo {
+    position: relative;
     z-index: 1;
     width: 200vw;
     margin-left: -50vw;
@@ -330,7 +331,7 @@ $jumbo-offset: 3 * $window-padding;
     overflow: hidden;
     background-color: #ca478b;//$pink; /* fudging colour for now due to compression */
     background-size: 50%;
-    @include bg-cover--top;
+    padding-top: 165px; // header height
 
     @include tablet {
       background-size: 80%;
