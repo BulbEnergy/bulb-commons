@@ -39,6 +39,10 @@ footer {
         min-height: 1px;
     }
 
+    &.logo {
+        @include span-columns(2);
+    }
+
     &.sitemap {
         @include span-columns(5);
     }
@@ -102,7 +106,7 @@ footer {
         }
 
         &.contact {
-            @include span-columns(12);
+            @include span-columns(3);
         }
 
         &.sitemap {
