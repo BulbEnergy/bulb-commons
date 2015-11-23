@@ -17,23 +17,6 @@
         }
     }
 }
-.blb-header--switching {
-    color: $navy;
-    a {
-        color: $pink;
-    }
-    .header-bg-container {
-        @include bg-cover;
-        background-image: url($commons-path + '/src/img/header-bg.png');
-        background-position: 0% 0%;
-        width: 100%;
-        position: absolute;
-        height: 50vh;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-}
 
 /***
 * Navigation Menu
@@ -118,6 +101,7 @@
         width: 79%;
         text-align: right;
         float: right;
+        white-space: nowrap;
         .menu-lists {
             font-size: 0;
             .menu-item {
@@ -246,8 +230,10 @@
 
     .icon-angle-down {
         position: absolute;
-        top: 2px;
+        top: 0;
         right: -20px;
+        bottom: 0;
+        margin: auto;
     }
 
     &.active {
