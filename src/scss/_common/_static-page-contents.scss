@@ -14,18 +14,25 @@ $std-padding: 2em;
             @include transition(all .5s);
             position: relative;
             padding: $window-padding;
-            max-width: 1200px;
+            max-width: 100vw;
             margin: 0 auto;
             z-index: 1;
+
+            @media (min-width: 1200px) {
+                max-width: 1200px;
+            }
+
             &.ghost {
                 opacity: 0;
                 padding-bottom: 0;
             }
+
             &.bleed {
                 .centered-wrap {
                     max-width: 1200px;
                     padding: 0;
                 }
+
                 @include mobile {
                     .content-col-quote {
                         &.six {
@@ -324,12 +331,13 @@ $jumbo-offset: 3 * $window-padding;
 .page-jumbo {
     position: relative;
     z-index: 1;
-    width: 200vw;
-    margin-left: -50vw;
+    width: 200%;
+    margin-left: -50%;
     border-bottom-left-radius: 45%;
     border-bottom-right-radius: 45%;
     overflow: hidden;
     background-color: #ca478b;//$pink; /* fudging colour for now due to compression */
+    background-position: top center;
     background-size: 50%;
     padding-top: 165px; // header height
 
