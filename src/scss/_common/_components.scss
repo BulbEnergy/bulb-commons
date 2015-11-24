@@ -486,8 +486,8 @@ input[type="radio"]:checked + label span {
                 min-width: 40%;
             }
             .usage--money {
-                .input {
-                    @include span-columns(5);
+                .field-input {
+                    @include span-columns(4);
                 }
             }
             @include tablet {
@@ -518,7 +518,7 @@ input[type="radio"]:checked + label span {
                     }
                 }
                 .usage--money {
-                    .input {
+                    .field-input {
                         @include span-columns(12);
                     }
                 }
