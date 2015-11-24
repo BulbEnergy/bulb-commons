@@ -69,16 +69,6 @@ $std-padding: 2em;
             background-image: url($commons-path + 'img/tariff-bg.jpg');
             position: relative;
         }
-        // About us page
-        &.bg--about {
-            position: relative;
-            @include bg-cover--bottom;
-            background-image: url($commons-path + 'img/Landing_about_horizontal.jpg');
-            background-position: 0% -10%;
-            @include before {
-                @include cover-gradient(to right, white, 30%, transparent, 60%);
-            }
-        }
         // Energy
         &.bg--HydroDiagram {
             @include bg-cover;
@@ -333,15 +323,15 @@ $jumbo-offset: 3 * $window-padding;
     overflow: hidden;
     background-color: #ca478b;//$pink; /* fudging colour for now due to compression */
     background-position: top center;
-    background-size: 50%;
+    background-size: 51%;
     padding-top: 165px; // header height
 
     @include tablet {
-      background-size: 80%;
+        background-size: 80%;
     }
 
-    @include desktop {
-      background-size: 80%;
+    @include mobile {
+        padding-top: 130px;
     }
 
     &.type1 {
@@ -373,10 +363,17 @@ $jumbo-offset: 3 * $window-padding;
 *  Add class to <section> following the page-jumbo
 */
 .main-container {
-
     .postjumbo {
         margin-top: -5vw;
         padding-top: #{$jumbo-offset - $window-padding};
+
+        @include tablet {
+            padding-top: 5em;
+        }
+
+        @include mobile {
+            padding-top: 3em;
+        }
 
         [class^="section-content-wrap"] {
             padding-top: 0;
