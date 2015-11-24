@@ -32,18 +32,24 @@
  * specific for payment period in refine quote journey
  */
 .field--inline-payment {
-    margin-top: 1em;
+    margin-top: 0.5em;
+    white-space: nowrap;
+
     @include mobile {
-        margin-bottom: 2em;
-        @include span-columns(12);
+        margin-top: 0.2em;
     }
+
     p {
         display: inline-block;
         margin: 0 1em;
+
+        @include mobile {
+            margin: 0 0.5em;
+        }
     }
+
     .field-select {
         display: inline-block;
-        width: 100%;
         max-width: 10em;
     }
 }
@@ -134,11 +140,15 @@
 
 .field-container {
     width: 100%;
-    margin: 1.5em 0;
+
+    & + .field-container {
+        margin-top: 2.2em;
+    }
+
     .field-body {
+        @include row();
         position: relative;
         margin: .5em 0;
-        @include row();
 
         &.radiostack {
             @include tablet {
@@ -175,9 +185,14 @@
         background-color: $white;
         width: 100%;
         padding: .25em;
-        // padding-left: 0;
+        padding-right: 1.5em;
         font-size: 1.5em;
         border: 1px solid $navy;
+
+        @include mobile {
+            font-size: 1em;
+        }
+
         &:hover {
             cursor: pointer;
         }
@@ -185,11 +200,21 @@
     label {
         position: absolute;
         font-size: $fs-large;
-        width: 1em;
-        height: 1.5em;
+        width: 2em;
+        left: -1.7em;
         text-align: center;
-        left: -1.5em;
         line-height: $fs-large;
+
+        @include mobile {
+            width: 1em;
+            left: -1em;
+        }
+
+        [class^="icon-"],
+        [class*=" icon-"] {
+            max-width: 100%;
+            vertical-align: middle;
+        }
     }
     label.small {
         font-style: $fs-small;
@@ -209,6 +234,10 @@
         top: 25%;
         left: calc(100% - 1.25em);
         pointer-events: none;
+
+        @include mobile {
+            font-size: 1.2em;
+        }
     }
 }
 
@@ -301,9 +330,15 @@ input[type="radio"]:checked + label span {
         color: red;
         @include transition(all .3s);
         display: block;
+
         p {
             font-size: 1em;
             line-height: 1.5em;
+
+            @include mobile {
+                font-size: 0.8em;
+                margin: 0.5em 0;
+            }
         }
         .msg-error {
             margin: 0;
@@ -525,7 +560,7 @@ input[type="radio"]:checked + label span {
                 }
                 .usage--money {
                     .field-input {
-                        @include span-columns(12);
+                        @include span-columns(6);
                     }
                 }
             }
@@ -539,7 +574,25 @@ input[type="radio"]:checked + label span {
              * new payment form padding
              */
             .payment-details {
-                padding: 2em;
+                padding-left: 2em;
+                padding-right: 2em;
+
+                & + .payment-details {
+                    padding-top: 2em;
+                }
+
+                @include mobile {
+                    padding-left: 1em;
+                    padding-right: 1em;
+
+                    &.reveal {
+                        padding-left: 2em;
+                        padding-right: 2em;
+                        margin-left: -1em;
+                        margin-right: -1em;
+                    }
+                }
+
                 &.secure {
                     background-color: $secure;
                     @include all-button-radius;
@@ -607,6 +660,7 @@ input[type="radio"]:checked + label span {
         }
     }
     .card-header {
+        margin-top: 1em;
         font-size: $fs-header;
         @include tablet {
             font-size: 2.5rem;
@@ -665,11 +719,15 @@ input[type="radio"]:checked + label span {
         width: 100%;
         border: 1px solid $navy;
         &.user {
-            font-size: 2em;
+            font-size: 1.8em;
             border: none;
             border-bottom: 1px solid $navy;
             border-radius: 0;
             padding: .25em 0;
+
+            @include mobile {
+                font-size: 1.2em;
+            }
         }
         &.dob {
             max-width: 5rem;
@@ -718,6 +776,11 @@ input[type="radio"]:checked + label span {
             width: auto;
             font-size: 1.5em;
             margin:1em 0;
+
+            @include mobile {
+                margin: 1em auto;
+                display: block;
+            }
         }
     }
 }
@@ -757,6 +820,12 @@ input[type="radio"]:checked + label span {
                 }
             }
         }
+
+        &.reveal {
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+
         .title {
             font-size: $fs-header;
             @include tablet {
@@ -818,6 +887,10 @@ input.invalid + .msg-error {
     overflow: hidden;
     .card-form--widget {
         margin: 2em;
+
+        @include mobile {
+            margin: 1em;
+        }
     }
 }
 @include mobile {
@@ -834,9 +907,16 @@ input.invalid + .msg-error {
     max-height: 0px;
     @include transition(all .5s);
     opacity: 0;
+
+    @include mobile {
+        padding-left: 2em;
+        padding-right: 2em;
+        margin-left: -2em;
+        margin-right: -2em;
+    }
+
     &.all {
         visibility: visible;
-        margin-left: 0;
         max-height: 2000px;
         opacity: 1;
     }
@@ -912,6 +992,11 @@ input.invalid + .msg-error {
     right: 0;
     z-index: 101;
     @include soft-blur;
+
+    @include mobile {
+        z-index: 99;
+    }
+
     button {
         &.btn--go {
             background-image: url('../img/bubbles--white.svg');
@@ -958,6 +1043,15 @@ input.invalid + .msg-error {
         right: 0;
         color: white;
         cursor: pointer;
+
+        @include mobile {
+            height: 15vh;
+            line-height: 15vh;
+            top: auto;
+            left: 0;
+            padding: 0;
+            text-align: center;
+        }
     }
     &.active {
         @include transform(scale(1));
