@@ -28,13 +28,19 @@
     }
     &.mobile {
         display: none;
+
+        @include mobile {
+            left: $window-padding/2;
+        }
     }
+
     @include menu-breakpoint {
         display: none;
         &.mobile {
             position: absolute;
             display: block;
             width: calc(100% - 8em);
+
             .nav--menu {
                 width: 50%;
                 background-color: $navy;
