@@ -19,6 +19,11 @@
     &:hover {
         cursor: pointer;
     }
+
+    @include tablet {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
 }
 
 @mixin bg-contain {
