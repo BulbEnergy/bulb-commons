@@ -520,6 +520,10 @@ input[type="radio"]:checked + label span {
                     .input {
                         @include span-columns(12);
                     }
+
+                    .field--inline-payment {
+                        @include span-columns(12);
+                    }
                 }
             }
             .padding--left {
