@@ -18,6 +18,10 @@ $std-padding: 2em;
             margin: 0 auto;
             z-index: 1;
 
+            @include mobile {
+                padding: $window-padding/2;
+            }
+
             @media (min-width: 1200px) {
                 max-width: 1200px;
             }
