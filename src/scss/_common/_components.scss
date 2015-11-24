@@ -503,6 +503,11 @@ input[type="radio"]:checked + label span {
                         width: 100%;
                     }
                 }
+                .usage--money {
+                    .field-input {
+                        @include span-columns(6);
+                    }
+                }
             }
             @include mobile {
                 padding: 0em;
