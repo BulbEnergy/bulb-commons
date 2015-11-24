@@ -146,6 +146,7 @@
                 }
             }
         }
+
         &.check {
             margin: 1em 0;
         }
@@ -380,7 +381,7 @@ input[type="radio"]:checked + label span {
         background-color: $green-hover;
     }
     &.debounce {
-        background-color: $secure; //  hayden request to this non brand colour   
+        background-color: $secure; //  hayden request to this non brand colour
     }
 }
 .btn--xlarge {
@@ -483,6 +484,11 @@ input[type="radio"]:checked + label span {
                 width: auto;
                 min-width: 40%;
             }
+            .usage--money {
+                .input {
+                    @include span-columns(5);
+                }
+            }
             @include tablet {
                 padding: 2em;
                 .content-col {
@@ -490,7 +496,7 @@ input[type="radio"]:checked + label span {
                         width:100%;
                     }
                     &.eight {
-                        width:100%;   
+                        width:100%;
                     }
                     &.four {
                         width: 100%;
@@ -504,15 +510,15 @@ input[type="radio"]:checked + label span {
                         width:100%;
                     }
                     &.eight {
-                        width:100%;   
+                        width:100%;
                     }
                     &.four {
                         width: 100%;
                     }
                 }
                 .usage--money {
-                    .six {
-                        width: 100%;
+                    .input {
+                        @include span-columns(12);
                     }
                 }
             }
@@ -574,7 +580,7 @@ input[type="radio"]:checked + label span {
                     width:100%;
                 }
                 &.eight {
-                        width:100%;   
+                        width:100%;
                 }
                 &.four {
                     width: 100%;
@@ -635,7 +641,7 @@ input[type="radio"]:checked + label span {
         }
         &.morenfo {
             font-size: $fs-large;
-            margin: 1em 0;   
+            margin: 1em 0;
         }
     }
     .card-content-body {
@@ -666,7 +672,7 @@ input[type="radio"]:checked + label span {
             text-align: left;
             font-size: 2rem;
             margin-right: .25em;
-            width: 100%;            
+            width: 100%;
         }
         &.ac-cvc {
             display: block;
@@ -1042,7 +1048,7 @@ input.invalid + .msg-error {
         &.end {
             width: 45%;
             margin-right: 0;
-        }        
+        }
     }
     .content-footer--offset {
         color: white;
@@ -1080,10 +1086,10 @@ input.invalid + .msg-error {
                     &.end {
                         margin-right: 0;
                     }
-                }                
+                }
             }
         }
-    }   
+    }
 }
 
 /**
