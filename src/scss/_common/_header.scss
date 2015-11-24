@@ -28,10 +28,6 @@
     }
     &.mobile {
         display: none;
-
-        @include mobile {
-            left: $window-padding/2;
-        }
     }
 
     @include menu-breakpoint {
@@ -98,11 +94,25 @@
             }
         }
     }
+
+    @include mobile {
+        &.mobile {
+            left: $window-padding/2;
+
+            .nav--menu {
+                &.burger {
+                    right: 2em;
+                }
+            }
+        }
+    }
+
     .nav--logo {
         width: 20%;
         min-height: 1.5em;
         min-width: 100px;
     }
+
     .nav--menu {
         width: 79%;
         text-align: right;
