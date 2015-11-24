@@ -137,6 +137,8 @@
     .field-body {
         position: relative;
         margin: .5em 0;
+        @include row();
+
         &.radiostack {
             @include tablet {
                 input[type="radio"] + label span {
