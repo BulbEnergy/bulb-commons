@@ -4,6 +4,22 @@
 
 /* for inline field elements */
 
+.msg-error {
+    overflow: hidden;
+    max-height: 0px;
+    font-size: 1rem;
+    @include transition(all .3s);
+    color: red;
+    opacity: 0;
+}
+
+input.invalid + .msg-error {
+    margin: $fs-small;
+    margin-left: 0;
+    max-height: 100px;
+    opacity: 1;
+}
+
 .field--inline {
     font-size: 0;
     input, button {
@@ -21,6 +37,8 @@
         color: red; /** needs conforming **/
         &.active {
             display: block;
+            opacity: 1;
+            max-height: none;
         }
     }
     .msg-dynamic {
@@ -350,9 +368,6 @@ input[type="radio"]:checked + label span {
         opacity: 1;
         .content-break {
             margin: 0;
-        }
-        .msg-error {
-
         }
     }
 }
@@ -865,22 +880,6 @@ input[type="radio"]:checked + label span {
     }
 }
 
-.msg-error {
-    overflow: hidden;
-    max-height: 0px;
-    font-size: 1rem;
-    @include transition(all .3s);
-    color: red;
-    opacity: 0;
-}
-
-input.invalid + .msg-error {
-    margin: $fs-small;
-    margin-left: 0;
-    max-height: 100px;
-    opacity: 1;
-}
-
 .viewload {
     @include transition(all .5s);
     max-height: 1000px;
@@ -932,9 +931,7 @@ input.invalid + .msg-error {
 @mixin tariff {
     [class^="content-main"] {
         display: none;
-        .main-block {
-            margin-bottom: 2em;
-        }
+
         .block-title {
             color: $pink;
             margin-bottom: 1em;
@@ -1023,12 +1020,21 @@ input.invalid + .msg-error {
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 100;
     @include transition(all .3s);
-    @include transform(scale(0.75));
     opacity: 0;
-    perspective: 1000px;
     visibility: hidden;
+    @include transform(translate2(0));
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+
+        .modal-card {
+            @include transform(translateY(-50%));
+        }
+    }
+
     .modal-bg {
         background-color: rgba(20,45,98,.85);
         width: 100%;
@@ -1036,6 +1042,7 @@ input.invalid + .msg-error {
         position: absolute;
         cursor: pointer;
     }
+
     .ui-close {
         position: absolute;
         padding: 3em;
@@ -1054,23 +1061,13 @@ input.invalid + .msg-error {
             text-align: center;
         }
     }
-    &.active {
-        @include transform(scale(1));
-        visibility: visible;
-        opacity: 1;
-        z-index: 100;
-        .modal-card {
-            opacity: 1;
-            @include transform(translateY(-50%) scale(1))
-        }
-    }
+
     .modal-card {
         position: relative;
         top: 50%;
         @include transition(all .3s);
         transform-origin: center;
-        opacity: 0;
-        @include transform(translateY(-50%) scale(1.5));
+        @include transform(translateY(-60%));
         cursor: default;
         @include all-button-radius;
         @include soft-blur;
@@ -1158,7 +1155,9 @@ input.invalid + .msg-error {
         width: 100%;
         text-align: center;
         left: 0;
-        bottom: -2em;
+        top: 100%;
+        padding-top: 1em;
+
         .left {
             float: left;
         }
