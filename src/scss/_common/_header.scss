@@ -78,9 +78,6 @@
                     .menu-item {
                         display: block;
                         padding: 0.75rem 0;
-                        &:last-child {
-                            padding: 0.5rem 2rem;
-                        }
                     }
                     .menu--close {
                         position: absolute;
@@ -90,6 +87,11 @@
                             cursor: pointer;
                         }
                     }
+                }
+
+                .menu-lists {
+                    margin-right: 0;
+                    margin-left: 0;
                 }
             }
         }
@@ -120,6 +122,9 @@
         white-space: nowrap;
         .menu-lists {
             font-size: 0;
+            margin-right: -2rem;
+            margin-left: -2rem;
+
             .menu-item {
                 .menu-link.inline {
                     @media (min-width: #{$tablet-width + 1px}) and (max-width: #{$desktop-width}) {
@@ -166,26 +171,6 @@
     }
     .menu-item {
         display: inline-block;
-        &:first-child {
-            a {
-                padding-left: 0;
-            }
-            .menu-link {
-                &:after {
-                    left: 0;
-                }
-            }
-        }
-        &:last-child {
-            a {
-                padding-right: 0;
-            }
-            .menu-link {
-                &:after {
-                    right: 0;
-                }
-            }
-        }
     }
 }
 
