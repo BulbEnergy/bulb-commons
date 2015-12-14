@@ -21,8 +21,8 @@ $std-padding: 2em;
             padding: $window-padding/2;
         }
 
-        @media (min-width: 1200px) {
-            max-width: 1200px;
+        @media (min-width: 1240px) {
+            max-width: 1240px;
         }
 
         &.ghost {
@@ -32,7 +32,7 @@ $std-padding: 2em;
 
         &.bleed {
             .centered-wrap {
-                max-width: 1200px;
+                max-width: 1240px;
                 padding: 0;
             }
 
