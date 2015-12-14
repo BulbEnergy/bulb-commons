@@ -23,6 +23,9 @@
 ***/
 
 .navigation {
+    max-width: 1240px;
+    margin: 0 auto;
+
     [class^="nav--"] {
         display: inline-block;
     }
