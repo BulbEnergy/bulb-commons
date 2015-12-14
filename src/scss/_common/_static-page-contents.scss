@@ -61,6 +61,10 @@ $std-padding: 2em;
                     @include span-columns(12);
                 }
             }
+
+            &.end {
+                margin-right: 0;
+            }
         }
 
         .content-image {
