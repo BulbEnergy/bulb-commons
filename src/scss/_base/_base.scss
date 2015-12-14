@@ -1,5 +1,6 @@
 $tablet-width: 1024px;
 $super-wide: 1440px;
+$desktop-lg-width: 1368px;
 $desktop-width: 1024px;
 $mobile-width: 640px;
 $menu-breakpoint-width: 790px;
@@ -14,6 +15,12 @@ $menu-breakpoint-width: 790px;
     @content;
   }
 }
+@mixin desktop-lg {
+  @media (min-width: #{$desktop-lg-width}) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: #{$tablet-width}) {
     @content;
