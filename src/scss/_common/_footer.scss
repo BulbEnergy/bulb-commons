@@ -11,10 +11,11 @@ footer {
     max-width: 1240px;
     width: 100%;
     margin: 0 auto;
-    padding: $window-padding;
+    padding: $window-padding 0;
     padding-bottom: 12em;
     @include tablet {
         position: relative;
+        padding: $window-padding;
     }
 
     @include mobile {
