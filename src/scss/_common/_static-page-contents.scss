@@ -19,6 +19,7 @@ $std-padding: 2em;
 
         @include desktop-lg {
             padding: $window-padding 0;
+            max-width: 1240px;
         }
 
         @include tablet {
@@ -27,11 +28,7 @@ $std-padding: 2em;
 
         @include mobile {
             padding: $window-padding/2;
-        }
-
-        @media (min-width: 1240px) {
-            max-width: 1240px;
-        }
+        }        
 
         &.ghost {
             opacity: 0;

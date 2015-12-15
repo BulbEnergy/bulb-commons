@@ -8,14 +8,15 @@ footer {
 }
 
 .blb-footer-container {
-    max-width: 1240px;
     width: 100%;
     margin: 0 auto;
     padding: $window-padding;
     padding-bottom: 12em;
 
     @include desktop-lg {
-        padding: $window-padding 0;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 1240px;
     }
 
     @include tablet {
