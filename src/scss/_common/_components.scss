@@ -196,7 +196,8 @@ input.invalid + .msg-error {
 
 .field-select {
     position: relative;
-    select {
+    select,
+    .field-select__single-option {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
@@ -213,6 +214,17 @@ input.invalid + .msg-error {
 
         &:hover {
             cursor: pointer;
+        }
+    }
+
+    .field-select__single-option {
+        display: block;
+        border-radius: 0.3em;
+        @media (min-width: 1025px) {
+            min-width: 127px;
+        }
+        &:hover {
+            cursor: default;
         }
     }
 
@@ -244,7 +256,7 @@ input.invalid + .msg-error {
     &.underline {
         border-bottom: 1px solid $navy;
     }
-    &:after {
+    &:not(.field-select--no-caret):after {
         content: "\f0d7";
         font-family: FontAwesome;
         position: absolute;
@@ -428,7 +440,7 @@ input[type="radio"]:checked + label span {
 .btn--go {
     background-color: $green;
     color: $white;
-    @include transition(all .3s);
+    @include transition(all .1s);
     &:hover {
         background-color: $green-hover;
     }
