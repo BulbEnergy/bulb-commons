@@ -36,6 +36,14 @@ footer {
     @include bg-contain--bottom;
     background-image: url($commons-path + '/src/img/footer.png');
 
+    @include tablet {
+        background-position: center bottom -3em;
+    }
+    
+    @include mobile {
+        background-position: center bottom -1em;
+    }
+
     .blb-footer-container {
         .footer-block-col.logo {
             @include tablet {
