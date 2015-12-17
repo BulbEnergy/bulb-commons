@@ -930,8 +930,6 @@ input[type="radio"]:checked + label span {
 
 @mixin tariff {
     [class^="content-main"] {
-        display: none;
-
         .block-title {
             color: $pink;
             margin-bottom: 1em;
