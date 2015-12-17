@@ -35,6 +35,29 @@ $footer-line-height: 1.7em;
 footer {
     @include bg-contain--bottom;
     background-image: url($commons-path + '/src/img/footer.png');
+
+    .blb-footer-container {
+        .footer-block-col.logo {
+            @include tablet {
+                display: none !important;
+            }
+        }
+
+        .footer-block-col__social {
+            @include mobile {
+                width: 100%;
+                margin-top: 28px;
+            }
+
+            .social-icons {
+                @include mobile {
+                    position: relative;
+                    bottom: auto;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
 }
 
 .footer-block-col {
