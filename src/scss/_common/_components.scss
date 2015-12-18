@@ -1060,16 +1060,7 @@ input[type="radio"]:checked + label span {
         top: 0;
         right: 0;
         color: white;
-        cursor: pointer;
-
-        @include mobile {
-            height: 15vh;
-            line-height: 15vh;
-            top: auto;
-            left: 0;
-            padding: 0;
-            text-align: center;
-        }
+        cursor: pointer;        
     }
 
     .modal-card {
