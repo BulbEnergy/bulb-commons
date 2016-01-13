@@ -124,6 +124,7 @@
             height: 2px;
             width: 100%;
             background: white;
+            border-radius: 6px;
             @include transition(all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1));
         }
 
