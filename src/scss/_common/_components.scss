@@ -1061,10 +1061,16 @@ input[type="radio"]:checked + label span {
         right: 0;
         color: white;
         cursor: pointer;
+        z-index: 1;
 
         @include mobile {
-            padding: 2em;
-        }     
+            height: 15vh;
+            line-height: 15vh;
+            top: auto;
+            left: 0;
+            padding: 0;
+            text-align: center;
+        }
     }
 
     .modal-card {
