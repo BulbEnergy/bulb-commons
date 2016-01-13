@@ -28,7 +28,7 @@ $std-padding: 2em;
 
         @include mobile {
             padding: $window-padding/2;
-        }        
+        }
 
         &.ghost {
             opacity: 0;
@@ -402,43 +402,6 @@ a.btn--med {
     }
 }
 
-.help-block-col {
-    vertical-align: top;
-    font-size: $fs-small;
-    color: $navy;
-    display: inline-block;
-    width: 25%;
-    [class^="column-contents--"] {
-        width: 100%;
-        min-height: 1px;
-    }
-    .column-contents--pink-bulb {
-        .line {
-            stroke: $pink;
-        }
-    }
-    .title-row {
-        height: 2em;
-        font-weight: bold;
-    }
-    .help-lists-block {
-        font-size: 0;
-        [class^="help-block-column"]{
-            display: inline-block;
-            width: 50%;
-            &:first-child {
-                width:inherit;
-                margin-right: 2em;
-            }
-        }
-        .help-col-list {
-            font-size: $fs-small;
-            .help-block-item {
-                line-height: 1.5em;
-            }
-        }
-    }
-}
 
 /***
 * Jumbo:
