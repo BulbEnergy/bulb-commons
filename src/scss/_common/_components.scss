@@ -44,6 +44,38 @@ input.invalid + .msg-error {
     .msg-dynamic {
         display: block;
     }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="checkbox"] + label {
+        display: inline-block;
+        background: $silver;
+        border: 1px solid $navy;
+        @include all-button-radius;
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    input[type="checkbox"]:checked + label {
+        background-color: $navy;
+        box-shadow: inset 0 0 0 4px $silver;
+    }
+
+    input[type="checkbox"] + label + label {
+        vertical-align: middle;
+    }
+
+    .field--inline {
+        display: inline;
+    }
+
+    .field--inline + .field--inline {
+        margin-left: 20px;
+    }
 }
 
 /**
