@@ -977,6 +977,7 @@ input[type="radio"]:checked + label span {
         .block-title {
             color: $pink;
             margin-bottom: 1em;
+            margin-top: 0;
         }
         .block-title--navy {
             color: $navy;
@@ -1112,19 +1113,26 @@ input[type="radio"]:checked + label span {
         transform-origin: center;
         @include transform(translateY(-60%));
         cursor: default;
-        @include all-button-radius;
-        @include soft-blur;
         width: 50%;
         max-width: 640px;
         min-width: 320px;
         margin: 0 auto;
-        background-color: white;
-        padding: $card-content-padding;
         max-height: 70vh;
         @include tariff;
+
+        .block {
+            @include row();
+
+            & + .block {
+                margin-top: 2em;
+            }
+        }
+
         .main-block {
+            padding: $card-content-padding;
             max-height: 60vh;
             overflow-y: auto;
+
             &.card-form {
                 box-shadow: none;
                 margin-bottom: 0;
@@ -1133,6 +1141,14 @@ input[type="radio"]:checked + label span {
                 margin-bottom: 0;
             }
         }
+
+        [class^="content-main"] {
+            @include all-button-radius;
+            background-color: white;
+            overflow: hidden;
+            @include soft-blur;
+        }
+
         .content-main--error {
             @include active;
         }
@@ -1151,6 +1167,10 @@ input[type="radio"]:checked + label span {
         .content-main--general {
             @include active;
         }
+    }
+    .modal-card--wide {
+        width: 80%;
+        max-width: 900px;
     }
     &.page-mode {
         overflow-y: auto;
