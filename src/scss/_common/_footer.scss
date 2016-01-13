@@ -39,7 +39,7 @@ footer {
     @include tablet {
         background-position: center bottom -3em;
     }
-    
+
     @include mobile {
         background-position: center bottom -1em;
     }
@@ -55,14 +55,6 @@ footer {
             @include mobile {
                 width: 100%;
                 margin-top: 28px;
-            }
-
-            .social-icons {
-                @include mobile {
-                    position: relative;
-                    bottom: auto;
-                    margin: 0 auto;
-                }
             }
         }
     }
@@ -178,10 +170,7 @@ footer {
         }
 
         .social-icons {
-            position: absolute;
-            bottom: 7em;
-            right: 2rem;
-            text-align: right;
+            float: right;
             width: 120px;
 
             .social-icon {
