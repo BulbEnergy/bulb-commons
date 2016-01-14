@@ -1112,6 +1112,10 @@ input[type="radio"]:checked + label span {
         max-height: 70vh;
         @include tariff;
 
+        @include mobile {
+            margin-top: 10vh;
+        }
+
         .block {
             @include row();
 
