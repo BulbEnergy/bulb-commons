@@ -350,7 +350,7 @@
         .dd-list {
             position: static;
             background: none;
-            visibility: visible;
+            visibility: inherit;
             opacity: 1;
             box-shadow: none;
             @include transition(none);
