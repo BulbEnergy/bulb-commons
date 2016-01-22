@@ -186,6 +186,10 @@
             &:after {
                 opacity: 1;
                 visibility: visible;
+                @include menu-breakpoint {
+                    opacity: 0;
+                    visibility: 0;
+                }
             }
         }
     }
