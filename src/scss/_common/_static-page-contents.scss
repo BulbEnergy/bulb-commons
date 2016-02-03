@@ -415,8 +415,8 @@ $jumbo-offset: 3 * $window-padding;
     z-index: 1;
     width: 200%;
     margin-left: -50%;
-    border-bottom-left-radius: 45%;
-    border-bottom-right-radius: 45%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     background-color: #ca478b;//$pink; /* fudging colour for now due to compression */
     background-position: top center;
     background-size: 51%;
