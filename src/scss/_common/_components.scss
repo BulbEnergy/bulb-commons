@@ -238,7 +238,6 @@ input.invalid + .msg-error {
         padding: .25em;
         padding-right: 1.5em;
         font-size: 1.5em;
-        border: 1px solid $navy;
 
         @include mobile {
             font-size: 1em;
