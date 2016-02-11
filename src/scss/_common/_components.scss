@@ -1021,26 +1021,41 @@ input[type="radio"]:checked + label span {
         z-index: 99;
     }
 
-    button {
-        &.btn--go {
-            background-image: url('../img/bubbles--white.svg');
-            background-size: 2.5em;
-            background-position: 1.5em 50%;
-            background-repeat: no-repeat;
-            border-bottom-right-radius: 0;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            padding: 1em 4em;
-            padding-left: 5em;
+    .chat-online--chat-with-us,
+    .chat-online--email-us {
+        background-position: 1.5em 50%;
+        background-repeat: no-repeat;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
 
-            @include mobile {
-                width: 78px;
-                white-space: nowrap;
-                overflow: hidden;
-                padding-left: 78px;
-                padding-right: 0;
-                z-index: 99;
-            }
+        @include mobile {
+            white-space: nowrap;
+            overflow: hidden;
+            z-index: 99;
+        }
+    }
+
+    .chat-online--chat-with-us {
+        background-image: url('../img/bubbles--white.svg');
+        background-size: 2.5em;
+        padding: 1em 4em;
+        padding-left: 5em;
+        @include mobile {
+            width: 78px;
+            padding-left: 78px;
+            padding-right: 0;
+        }
+    }
+
+    .chat-online--email-us {
+        background-image: url('../img/mail-us--white.svg');
+        background-size: 2em;
+        padding: 1em 4em 1em 4.5em;
+        @include mobile {
+            width: 70px;
+            padding-left: 70px;
+            padding-right: 0;
         }
     }
 }
