@@ -955,18 +955,56 @@ input[type="radio"]:checked + label span {
     opacity: 0;
 }
 
+.modal-window .modal-card--wide.modal-card--tariff {
+    max-width: 1200px;
+    @include mobile {
+        margin-top: -90px;
+    }
+}
+
 @mixin tariff {
     [class^="content-main"] {
+        &.content-main--tariff {
+            .main-block {
+                padding: 50px;
+            }
+        }
+
+        .block-double {
+            float: left;
+            width: calc(50% - 50px);
+            @include tablet {
+                width: 100%;
+            }
+        }
+
+        .block-double + .block-double {
+            border-left: 1px solid #dfdddd;
+            padding-left: 50px;
+            margin-left: 50px;
+
+            @include tablet {
+                border-left: 0px solid transparent;
+                border-top: 1px solid #dfdddd;
+                padding-top: 50px;
+                padding-left: 0px;
+                margin-left: 0px;
+            }
+        }
+
         .block-title {
             color: $pink;
-            margin-bottom: 1em;
+            margin-bottom: 11px;
             margin-top: 0;
+            font-size: 18px;
         }
         .block-title--navy {
             color: $navy;
             margin-bottom: 1em;
         }
         .block-table {
+            margin-bottom: 38px;
+
             .info {
                 li {
                     vertical-align: top;
@@ -975,19 +1013,27 @@ input[type="radio"]:checked + label span {
                     .detail li {
                         display: inline-block;
                         word-wrap: break-word;
+                        font-size: 18px;
                     }
                     .detail li:first-child {
                         width: 55%;
+                        font-weight: 800;
+                        @include mobile {
+                            width: 100%;
+                        }
                     }
                     .detail li:last-child {
                         width: 45%;
+                        @include mobile {
+                            width: 100%;
+                        }
                     }
                 }
             }
             .detail {
                 font-size: 0;
-                border-top: 1px solid rgba(0,0,0,.2);
-                margin-bottom: 10px;
+                //border-top: 1px solid rgba(0,0,0,.2);
+                margin-bottom: 0px;
                 padding-top: 5px;
             }
         }
