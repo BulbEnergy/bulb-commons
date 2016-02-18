@@ -969,25 +969,42 @@ input[type="radio"]:checked + label span {
     [class^="content-main"] {
         &.content-main--tariff {
             .main-block {
-                padding: 50px;
+                padding: 25px;
+
+                p {
+                    font-size: 14px;
+                }
             }
         }
 
         .block-double {
             float: left;
-            width: calc(50% - 50px);
+            width: calc(50% - 60px);
+            margin-right: 0;
             @include tablet {
                 width: 100%;
             }
         }
 
         .block-double + .block-double {
-            border-left: 1px solid #dfdddd;
-            padding-left: 50px;
-            margin-left: 50px;
+            position: relative;
+            margin-left: 60px;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 100%;
+                background: #dfdddd;
+                position: absolute;
+                left: -30px;
+            }
 
             @include tablet {
-                border-left: 0px solid transparent;
+                &:before {
+                    display: none;
+                }
+
                 border-top: 1px solid #dfdddd;
                 padding-top: 50px;
                 padding-left: 0px;
