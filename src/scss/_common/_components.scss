@@ -312,7 +312,8 @@ form {
         @include all-button-radius;
         padding: $button-padding;
     }
-    input {
+    input,
+    textarea {
         outline: none;
         color: $navy;
         padding: $button-padding;
@@ -324,6 +325,7 @@ form {
     input[type="radio"] {
         display: none;
     }
+    textarea:focus,
     input:focus {
         // appearance: none;
         @include soft-blur;
@@ -758,7 +760,8 @@ input[type="radio"]:checked + label span {
             padding: 2em;
         }
     }
-    input {
+    input,
+    textarea {
         width: 100%;
         border: 1px solid $navy;
         &.user {
