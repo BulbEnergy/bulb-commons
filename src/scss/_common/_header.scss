@@ -66,7 +66,9 @@
         text-align: right;
         float: right;
         white-space: nowrap;
-        display: none;
+        @include menu-breakpoint {
+            display: none;
+        }
 
         &.open {
             display: block;
