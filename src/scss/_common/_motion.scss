@@ -95,12 +95,13 @@
   opacity: 1;
   left: 0;
   right: 0;
-  @include transition(all .5s ease-in-out);
+  @include transition(all .35s ease-in-out);
 }
 
 [ui-view].ng-enter {
   opacity: 0;
-  @include transform(translate3d(0, 25vh, 0));
+  @include transform(translate3d(0, 15px, 0));
+  overflow: hidden;
 }
 
 [ui-view].ng-enter-active {
@@ -109,7 +110,7 @@
 }
 
 [ui-view].ng-leave {
-  opacity: 0; 
+  opacity: 0;
   @include transform(translate3d(0, 0, 0));
 }
 
