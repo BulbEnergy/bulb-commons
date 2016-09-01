@@ -480,6 +480,9 @@ input[type="radio"]:checked + label span {
     &.debounce {
         background-color: $secure; //  hayden request to this non brand colour
     }
+    &:disabled {
+        background-color: $secure; //  hayden request to this non brand colour
+    }
 }
 .btn--xlarge {
     font-size: $fs-large;
