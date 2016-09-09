@@ -23,7 +23,9 @@
 .txt-right {
     text-align: right;
 }
-
+.no-wrap {
+    white-space: nowrap;
+}
 /* Neat Grid Last-child class */
 .end {
     margin-right: 0;
