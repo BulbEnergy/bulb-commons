@@ -1071,63 +1071,63 @@ input[type="radio"]:checked + label span {
 /**
  * Chat Button
  */
-
-.chat-box {
-    opacity: 0;
-    @include transition(all .5s);
-    &.show {
-        opacity: 1;
-    }
-}
-.chat-online {
-    position: fixed;
-    right: 0;
-    z-index: 101;
-    @include soft-blur;
-
-    @include mobile {
-        z-index: 99;
-    }
-
-    .chat-online--chat-with-us,
-    .chat-online--email-us {
-        background-position: 1.5em 50%;
-        background-repeat: no-repeat;
-        border-bottom-right-radius: 0;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-
-        @include mobile {
-            display: block;
-            white-space: nowrap;
-            overflow: hidden;
-            z-index: 99;
-        }
-    }
-
-    .chat-online--chat-with-us {
-        background-image: url('../img/bubbles--white.svg');
-        background-size: 2.5em;
-        padding: 1em 4em;
-        padding-left: 5em;
-        @include mobile {
-            width: 78px;
-            padding-left: 78px;
-            padding-right: 0;
-        }
-    }
-
-    .chat-online--email-us {
-        background-image: url('../img/mail-us--white.svg');
-        background-size: 2em;
-        padding: 1em 4em 1em 4.5em;
-        @include mobile {
-            width: 70px;
-            padding-left: 70px;
-            padding-right: 0;
-        }
-    }
-}
+//
+// .chat-box {
+//     opacity: 0;
+//     @include transition(all .5s);
+//     &.show {
+//         opacity: 1;
+//     }
+// }
+// .chat-online {
+//     position: fixed;
+//     right: 0;
+//     z-index: 101;
+//     @include soft-blur;
+//
+//     @include mobile {
+//         z-index: 99;
+//     }
+//
+//     .chat-online--chat-with-us,
+//     .chat-online--email-us {
+//         background-position: 1.5em 50%;
+//         background-repeat: no-repeat;
+//         border-bottom-right-radius: 0;
+//         border-top-left-radius: 0;
+//         border-top-right-radius: 0;
+//
+//         @include mobile {
+//             display: block;
+//             white-space: nowrap;
+//             overflow: hidden;
+//             z-index: 99;
+//         }
+//     }
+//
+//     .chat-online--chat-with-us {
+//         background-image: url('../img/bubbles--white.svg');
+//         background-size: 2.5em;
+//         padding: 1em 4em;
+//         padding-left: 5em;
+//         @include mobile {
+//             width: 78px;
+//             padding-left: 78px;
+//             padding-right: 0;
+//         }
+//     }
+//
+//     .chat-online--email-us {
+//         background-image: url('../img/mail-us--white.svg');
+//         background-size: 2em;
+//         padding: 1em 4em 1em 4.5em;
+//         @include mobile {
+//             width: 70px;
+//             padding-left: 70px;
+//             padding-right: 0;
+//         }
+//     }
+// }
 
 /**
  * Modal
