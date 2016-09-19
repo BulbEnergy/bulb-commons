@@ -21,6 +21,12 @@ $menu-breakpoint-width: 790px;
   }
 }
 
+@mixin desktop-m {
+    @media (min-width: #{$desktop-width}) {
+      @content;
+    }
+}
+
 @mixin tablet {
   @media (max-width: #{$tablet-width}) {
     @content;

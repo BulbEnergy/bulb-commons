@@ -20,9 +20,12 @@
 }
 
 #desk-chat.minimised {
-    bottom: calc(-100% + 3.625rem);
+    bottom: calc(-100% + 3.825rem);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    @include desktop-m {
+        bottom: calc(-100% + 4.425rem);
+    }
 }
 
 #desk-chat.closed {
