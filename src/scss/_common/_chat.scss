@@ -36,7 +36,6 @@
 
 .chat-button,
 .chat-online--request-callback {
-     display: none;
      z-index: 99;
      position: fixed;
      bottom: 0;
@@ -50,6 +49,10 @@
      border-bottom-right-radius: 0px !important;
      border-bottom-left-radius: 0px !important;
      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+ }
+
+ .chat-button.hidden {
+     display: none !important;
  }
 
  .chat-button--mobile {
@@ -72,12 +75,12 @@
     border-radius: 50%;
 }
 
-.chat-button--mobile .chat-button__text {
+.chat-button--mobile.chat-button__text {
     padding: 0;
 }
 
 .chat-button__text {
-    padding: 0 20px;
+    padding: 0;
 }
 
 .chat-button__icon {
