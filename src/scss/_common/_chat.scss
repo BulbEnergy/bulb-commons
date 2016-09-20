@@ -71,7 +71,11 @@
     border-radius: 50%;
 }
 
-.chat-button--mobile .chat-button__text {
+.chat-button--mobile.chat-button__text {
+    padding: 0;
+}
+
+.chat-button__text {
     padding: 0;
 }
 
