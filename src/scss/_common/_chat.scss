@@ -51,6 +51,10 @@
      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
  }
 
+ .chat-button.hidden {
+     display: none !important;
+ }
+
  .chat-button--mobile {
      visibility: hidden;
      right: 20px;
