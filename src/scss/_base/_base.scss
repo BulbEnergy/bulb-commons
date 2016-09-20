@@ -22,7 +22,7 @@ $menu-breakpoint-width: 790px;
 }
 
 @mixin desktop-m {
-    @media (min-width: #{$desktop-width}) {
+    @media (max-width: #{$desktop-width}) {
       @content;
     }
 }
