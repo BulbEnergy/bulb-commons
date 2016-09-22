@@ -49,6 +49,9 @@
      border-bottom-right-radius: 0px;
      border-bottom-left-radius: 0px;
      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+     @include mobile {
+         display: none !important;
+     }
  }
 
  .chat-button.hidden {
@@ -62,7 +65,7 @@
      width: 70px;
      height: 70px;
      padding: 24px 0px 0px 15px;
-     border-radius: 50%
+     border-radius: 50%;
  }
 
 .chat-button--mobile {
