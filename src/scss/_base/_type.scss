@@ -2,50 +2,44 @@
  * Base styles ~ Type
  */
 
-// @include font-face("ginger", "/fonts/f37ginger-regular-webfont");
-// @include font-face("ginger-light", "/fonts/f37ginger-light-webfont");
-
 @font-face {
-    font-family: 'ginger';
-    src: url('fonts/f37ginger-light-webfont.eot');
-    src: url('fonts/f37ginger-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/f37ginger-light-webfont.woff2') format('woff2'),
-         url('fonts/f37ginger-light-webfont.woff') format('woff'),
-         url('fonts/f37ginger-light-webfont.ttf') format('truetype'),
-         url('fonts/f37ginger-light-webfont.svg#f37_gingerlight') format('svg');
+    font-family: 'graphik';
+    src: url('fonts/Graphik-Light.eot');
+    src: url('fonts/Graphik-Light.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Graphik-Light.woff2') format('woff2'),
+         url('fonts/Graphik-Light.woff') format('woff'),
+         url('fonts/Graphik-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'ginger';
-    src: url('fonts/f37ginger-lightitalic-webfont.eot');
-    src: url('fonts/f37ginger-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/f37ginger-lightitalic-webfont.woff2') format('woff2'),
-         url('fonts/f37ginger-lightitalic-webfont.woff') format('woff'),
-         url('fonts/f37ginger-lightitalic-webfont.ttf') format('truetype'),
-         url('fonts/f37ginger-lightitalic-webfont.svg#f37_gingerlight_italic') format('svg');
+    font-family: 'graphik';
+    src: url('fonts/Graphik-LightItalic.eot');
+    src: url('fonts/Graphik-LightItalic.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Graphik-LightItalic.woff2') format('woff2'),
+         url('fonts/Graphik-LightItalic.woff') format('woff'),
+         url('fonts/Graphik-LightItalic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 
 }
 
 @font-face {
-    font-family: 'ginger';
-    src: url('fonts/f37ginger-regular-webfont.eot');
-    src: url('fonts/f37ginger-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/f37ginger-regular-webfont.woff2') format('woff2'),
-         url('fonts/f37ginger-regular-webfont.woff') format('woff'),
-         url('fonts/f37ginger-regular-webfont.ttf') format('truetype'),
-         url('fonts/f37ginger-regular-webfont.svg#f37_gingerregular') format('svg');
+    font-family: 'graphik';
+    src: url('fonts/Graphik-Regular.eot');
+    src: url('fonts/Graphik-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Graphik-Regular.woff2') format('woff2'),
+         url('fonts/Graphik-Regular.woff') format('woff'),
+         url('fonts/Graphik-Regular.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 
 }
 
-$base-font: "ginger", helvetica, futura, sans-serif;
-$alt-font: "ginger", helvetica, futura, sans-serif;
+$base-font: "graphik", helvetica, futura, sans-serif;
+$alt-font: "graphik", helvetica, futura, sans-serif;
 
 a {
     color: $white;
